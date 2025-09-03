@@ -4,14 +4,22 @@
 ---@field Questing GMR.Questing
 GMR = {}
 
-function GMR.AIRespondTo() end
+--
+-- Data from https://gmrwow.com/docs/#/api
+--
+
+---@param playerName any
+---@param msg any
+function GMR.AIRespondTo(playerName, msg) end
 ---@param id number quest id
 function GMR.AbandonQuest(id) end
-function GMR.AcceptQuest() end
-function GMR.AcceptTrade() end
-function GMR.AddMessage() end
-function GMR.AllowChat() end
+---@param x number
+---@param y number
+---@param z number
+---@param id number
+function GMR.AcceptQuest(x, y, z, id) end
 function GMR.AllowSpeedUp() end
+---@return boolean
 function GMR.AmmoExists() end
 function GMR.AnnouncementProfile() end
 function GMR.ApplyFishingLure() end
@@ -21,83 +29,211 @@ function GMR.ApplyFishingLure() end
 ---@param x2 number
 ---@param y2 number
 ---@param z2 number
----@return boolean Wether first and second position are in line of sight
-function GMR.ArePositionsInLoS(x1, y1, z1, x2, y2, z2) end
-function GMR.AscendStop() end
-function GMR.AvoidUnit() end
-function GMR.BattlegroundHandler() end
+---@param minIndex number?
+---@param maxIndex number?
+---@param step number?
+---@return boolean @Wether first and second position are in line of sight
+function GMR.ArePositionsInLoS(x1, y1, z1, x2, y2, z2, minIndex, maxIndex, step) end
+---@param unit any
+---@param spells any
+function GMR.AvoidUnit(unit, spells) end
+---@param npcX number
+---@param npcY number
+---@param npcZ number
+---@param npcId number
+---@param gateX number
+---@param gateY number
+---@param gateZ number
+---@param timer any
+function GMR.BattlegroundHandler(npcX, npcY, npcZ, npcId, gateX, gateY, gateZ, timer) end
 function GMR.BindHearthstone() end
 ---@param guid string object's GUID
 function GMR.BlacklistGUID(guid) end
 ---@param id number object Id
 function GMR.BlacklistId(id) end
-function GMR.BlacklistSetNode() end
-function GMR.BuildingHandler() end
+---@param raduis number
+function GMR.BlacklistSetNode(raduis) end
 function GMR.BuyAmmo() end
 function GMR.BuyGoods() end
-function GMR.BuyItemWithId() end
-function GMR.ByteToChinese() end
-function GMR.CCUnit() end
+---@param x number
+---@param y number
+---@param z number
+---@param id number
+---@param itemID number
+function GMR.BuyItemWithId(x, y, z, id, itemID) end
+---@param unit any
+function GMR.CCUnit(unit) end
 function GMR.CallPet() end
 function GMR.CallbackObjects() end
-function GMR.CanJoinBattlefield() end
 ---@param spell string
 function GMR.CancelBuff(spell) end
-function GMR.CancelPendingSpell() end
-function GMR.CancelUnitBuff() end
 ---Cast a spell
 ---@param spell string
----@param unit string|userdata
-function GMR.Cast(spell, unit) end
+---@param unit string|any
+---@param instant boolean?
+function GMR.Cast(spell, unit, instant) end
 ---Cast aoe (with zone) spell
 ---@param spell string
----@param unit string|userdata
+---@param unit string|any
 function GMR.CastAoE(spell, unit) end
-function GMR.CastId() end
-function GMR.CastMaxRank() end
+---@param spellID number
+---@param unit string|any
+function GMR.CastId(spellID, unit) end
+---@param spellName string
+---@param unit string|any
+function GMR.CastMaxRank(spellName, unit) end
 function GMR.CastRacialSpell() end
-function GMR.CastShapeshift() end
-function GMR.CastSpellByName() end
-function GMR.CastWithBeat() end
-function GMR.CheckInLoS() end
-function GMR.ChineseToByte() end
-function GMR.CircleAroundCursor() end
+---@param form any
+function GMR.CastShapeshift(form) end
+---@param spell any
+---@param unit string|any
+function GMR.CastWithBeat(spell, unit) end
+---@param unit string|any
+---@param otherUnit string|any
+---@return boolean
+function GMR.CheckInLoS(unit, otherUnit) end
+---@param state any
+---@param color any
+function GMR.CircleAroundCursor(state, color) end
+function GMR.ClassRotation() end
 function GMR.ClassTrainerHandler() end
-function GMR.ClearFocus() end
 function GMR.ClearInvalidUnstuckEntries() end
-function GMR.ClearTarget() end
 function GMR.ClickChatTab1() end
 function GMR.ClickGossipButton() end
-function GMR.ClickPosition() end
 function GMR.ClickQuestButton() end
-function GMR.CloseDropDownMenus() end
 function GMR.CombatRotation() end
 function GMR.CombatRotationToggle() end
-function GMR.CombatStrafe() end
-function GMR.CompleteObjectiveTrackerQuest() end
-function GMR.CompleteQuest() end
-function GMR.Conjure() end
-function GMR.ConnectMapZones() end
-function GMR.ConnectProfiles() end
+---@param direction any
+function GMR.CombatStrafe(direction) end
+---@param id number
+function GMR.CompleteObjectiveTrackerQuest(id) end
+---@param x number
+---@param y number
+---@param z number
+---@param id number
+---@param questId number
+---@param isRepeatable boolean
+function GMR.CompleteQuest(x, y, z, id, questId, isRepeatable) end
+---@param foodType any
+function GMR.Conjure(foodType) end
+---@param mapId number
+---@param zone any
+---@param otherZone any
+---@param array any
+function GMR.ConnectMapZones(mapId, zone, otherZone, array) end
+---@param oldProfile any
+---@param level number
+---@param folder any
+---@param newProfile any
+function GMR.ConnectProfiles(oldProfile, level, folder, newProfile) end
+---@param profileName string
+---@param split any
+function GMR.ConvertGMR2Profile(profileName, split) end
 function GMR.ConvertQuests() end
-function GMR.CopyToClipboard() end
-function GMR.CreateCenter() end
+---@param r any
+function GMR.CreateCenter(r) end
 function GMR.CreateCenters() end
----@param dirPath string
-function GMR.CreateDirectory(dirPath) end
-function GMR.CreateDungeonTimer() end
-function GMR.CreateFlightPath() end
-function GMR.CreateGryphonMasterTimer() end
-function GMR.CreateTableEntry() end
+---@param timer any
+function GMR.CreateDungeonTimer(timer) end
+---@param startX number
+---@param startY number
+---@param startZ number
+---@param destX number
+---@param destY number
+---@param destZ number
+---@param adjust any?
+function GMR.CreateFlightPath(startX, startY, startZ, destX, destY, destZ, adjust) end
+---@param timer any
+function GMR.CreateGryphonMasterTimer(timer) end
+---@param t any
+function GMR.CreateTableEntry(t) end
 function GMR.CustomCombatConditions() end
-function GMR.CustomPathHandler() end
-function GMR.Debug() end
+---@param pathType any
+function GMR.CustomPathHandler(pathType) end
+---@param msg string
+function GMR.Debug(msg) end
 function GMR.DebugActions() end
 function GMR.DebugEmptyQuestFrame() end
-function GMR.DebugLoader() end
+---@param playerName string
+---@param msg string
+function GMR.DebugLoader(playerName, msg) end
 function GMR.DebugLootWindow() end
 function GMR.DebugOpenedFrames() end
 function GMR.DebugQuestFrame() end
+---@param height number
+function GMR.DecreaseProfileHeight(height) end
+
+-- stopped by https://gmrwow.com/docs/#/api?id=decreaseprofileheight
+
+--
+-- data not validated by docs or not in docs yey
+
+function GMR.AcceptTrade() end
+function GMR.AddMessage() end
+function GMR.AllowChat() end
+function GMR.AscendStop() end
+
+
+
+function GMR.BuildingHandler() end
+
+
+
+function GMR.ByteToChinese() end
+
+function GMR.CallPet() end
+function GMR.CallbackObjects() end
+function GMR.CanJoinBattlefield() end
+
+function GMR.CancelPendingSpell() end
+function GMR.CancelUnitBuff() end
+
+
+
+
+
+
+function GMR.CastSpellByName() end
+
+
+function GMR.ChineseToByte() end
+
+
+function GMR.ClearFocus() end
+
+function GMR.ClearTarget() end
+
+
+function GMR.ClickPosition() end
+
+function GMR.CloseDropDownMenus() end
+
+
+
+
+
+
+
+
+
+function GMR.CopyToClipboard() end
+
+
+---@param dirPath string
+function GMR.CreateDirectory(dirPath) end
+
+
+
+
+
+
+
+
+
+
+
+
+
 function GMR.DefenseWhileRunning() end
 ---Defines an ammo vendor for a profile
 ---@param x number
@@ -287,8 +423,8 @@ function GMR.GetAmmoType() end
 function GMR.GetAnglePercentageBetween() end
 function GMR.GetAnglePercentageBetweenObjects() end
 function GMR.GetAngles() end
----@param object1 string|userdata
----@param object2 string|userdata
+---@param object1 string|any
+---@param object2 string|any
 ---@return number The angles between object1 and object2
 function GMR.GetAnglesBetweenObjects(object1, object2) end
 ---@param x1 number
@@ -310,7 +446,7 @@ function GMR.GetBattlegroundCondition() end
 function GMR.GetBattlegroundInfo() end
 function GMR.GetBattlegroundName() end
 function GMR.GetBattlegroundTypeButton() end
----@param unit string|userdata
+---@param unit string|any
 ---@param spell string
 ---@param byPlayer boolean
 function GMR.GetBuffExpiration(unit, spell, byPlayer) end
@@ -322,7 +458,7 @@ function GMR.GetCameraPosition() end
 function GMR.GetCentralIndex() end
 function GMR.GetCentralPoint() end
 function GMR.GetCentralPoints() end
----@param unit string|userdata
+---@param unit string|any
 ---@return string
 function GMR.GetClass(unit) end
 function GMR.GetClassQuestId() end
@@ -350,7 +486,7 @@ function GMR.GetCursorWorldPosition() end
 function GMR.GetCustomObject() end
 function GMR.GetDate() end
 function GMR.GetDeadlyPoison() end
----@param unit string|userdata
+---@param unit string|any
 ---@param spell string
 ---@return number
 function GMR.GetDebuffExpiration(unit, spell) end
@@ -369,14 +505,14 @@ function GMR.GetDisenchantableItem() end
 ---
 ---Example:
 ---	- GMR.GetDistance("player", attackable, ">", 8)
----@param unit string|userdata
----@param otherUnit string|userdata
+---@param unit string|any
+---@param otherUnit string|any
 ---@param operation string "<", "<=", ">", ">="
 ---@param distance number
 ---@return boolean
 function GMR.GetDistance(unit, otherUnit, operation, distance) end
----@param object1 string|userdata
----@param object2 string|userdata
+---@param object1 string|any
+---@param object2 string|any
 ---@return number The distance between object1 and object2
 function GMR.GetDistanceBetweenObjects(object1, object2) end
 ---@param x1 number
@@ -447,7 +583,7 @@ function GMR.GetGryphonMaster() end
 function GMR.GetGryphonMasterXY() end
 function GMR.GetHardcodedPath() end
 function GMR.GetHealingUnit() end
----@param unit string|userdata
+---@param unit string|any
 ---@return number Unit's HP in percent (0-100)
 function GMR.GetHealth(unit) end
 ---@param spell string
@@ -492,7 +628,7 @@ function GMR.GetMailboxGoldReceiver() end
 function GMR.GetMailboxGoldSent() end
 function GMR.GetMailboxPath() end
 function GMR.GetMailingItems() end
----@param unit string|userdata
+---@param unit string|any
 ---@return number Unit's mana in percent
 function GMR.GetMana(unit) end
 ---@param spell string
@@ -539,7 +675,7 @@ function GMR.GetNextTalent() end
 function GMR.GetNode() end
 function GMR.GetNormalPositionFromPosition() end
 function GMR.GetNumAmmo() end
----@param unit string|userdata
+---@param unit string|any
 ---@param distance number
 ---@return number
 function GMR.GetNumAttackingEnemies(unit, distance) end
@@ -548,7 +684,7 @@ function GMR.GetNumBuyingDrinks() end
 function GMR.GetNumBuyingFoods() end
 function GMR.GetNumDrink() end
 function GMR.GetNumDungeonTimers() end
----@param unit string|userdata
+---@param unit string|any
 ---@param distance number
 ---@return number
 function GMR.GetNumEnemies(unit, distance) end
@@ -560,7 +696,7 @@ function GMR.GetNumFreeTalents() end
 function GMR.GetNumFriends() end
 function GMR.GetNumPartyMembers() end
 function GMR.GetNumPartyMembersAroundPosition() end
----@param unit string|userdata
+---@param unit string|any
 ---@param distance number
 ---@return number
 function GMR.GetNumPartyMembersAroundUnit(unit, distance) end
@@ -624,7 +760,7 @@ function GMR.GetPlayerAttackingPlayer() end
 function GMR.GetPlayerPointer() end
 function GMR.GetPlayerPosition() end
 function GMR.GetPositionAroundObjectOnCircle() end
----@type string|userdata object
+---@type string|any object
 ---@type number distance
 ---@return number, number, number x, y, z of new position
 function GMR.GetPositionBehindPlayer(object, distance) end
@@ -665,11 +801,11 @@ function GMR.GetQuestId() end
 function GMR.GetQuestNpcIds() end
 function GMR.GetQuestingIndex() end
 function GMR.GetQuestingState() end
----@param unit string|userdata
+---@param unit string|any
 ---@return string
 function GMR.GetRace(unit) end
 function GMR.GetRacialSpell() end
----@param unit string|userdata
+---@param unit string|any
 ---@return number unit's rage
 function GMR.GetRage(unit) end
 function GMR.GetRealTalentPosition() end
@@ -755,7 +891,7 @@ function GMR.GryphonMasterHandler() end
 function GMR.GuidToLetter() end
 function GMR.HandleCustomPath() end
 ---Check buff on unit. Buff from any source, it may be player, other players, npcs
----@param unit string|userdata
+---@param unit string|any
 ---@param buff string
 ---@param byPlayer boolean Wether the buff was casted by player or not
 ---@return boolean
@@ -764,7 +900,7 @@ function GMR.HasBuffId() end
 function GMR.HasBuffStacks() end
 function GMR.HasColdWeatherFlying() end
 ---Check debuff on unit. Debuff from any source, it may be player, other players, npcs
----@param unit string|userdata
+---@param unit string|any
 ---@param debuff string
 ---@param byPlayer boolean
 ---@return boolean
@@ -777,18 +913,18 @@ function GMR.HasMining() end
 function GMR.HasMoney() end
 function GMR.HasPetSacrificeBuff() end
 ---Check unit has player's buff
----@param unit string|userdata
+---@param unit string|any
 ---@param buff string
 ---@return boolean
 function GMR.HasPlayerBuff(unit, buff) end
 ---Check unit has debuff, that belongs to player
----@param unit string|userdata
+---@param unit string|any
 ---@param debuff string
 ---@return boolean
 function GMR.HasPlayerDebuff(unit, debuff) end
 ---Get stacks count of player's debuff on unit (?)
 ---(NEED TEST)
----@param unit string|userdata
+---@param unit string|any
 ---@param debuff string
 ---@return number count of stacks
 function GMR.HasPlayerDebuffStacks(unit, debuff) end
@@ -804,14 +940,14 @@ function GMR.HideUnavailableTrainerSpells() end
 ---@param name string
 function GMR.ImportSettings(name) end
 ---Wether a given unit is in combat or not [and being targeted or not]
----@param unit string|userdata
+---@param unit string|any
 ---@param isBeingTargeted boolean ether the unit is being targeted or not
 ---@return boolean
 function GMR.InCombat(unit, isBeingTargeted) end
 function GMR.InFrontOfCamera() end
 ---Wether unit and otherUnit are in line of sight
----@param unit string|userdata
----@param otherUnit string|userdata
+---@param unit string|any
+---@param otherUnit string|any
 ---@return boolean
 function GMR.InLoS(unit, otherUnit) end
 function GMR.InMeeleRange(unit, anotherUnit) end
@@ -820,14 +956,14 @@ function GMR.InteractObject() end
 function GMR.InteractUnit() end
 function GMR.InteractVendor() end
 function GMR.IsAdmin() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsAlive(unit) end
 function GMR.IsAmmoBag() end
 function GMR.IsAmmoEquipped() end
 function GMR.IsAmmoItem() end
 ---@param spell string
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsAoECastable(spell, unit) end
 function GMR.IsArrayQuestComplete() end
@@ -854,9 +990,9 @@ function GMR.IsBuying() end
 function GMR.IsCachedEnemyNearPosition() end
 ---Check is spell can be casted
 ---@param spell string
----@param unit string|userdata
+---@param unit string|any
 ---@param range number
----@param otherUnit string|userdata
+---@param otherUnit string|any
 ---@param ignoreMana boolean
 ---@param ignoreCooldown boolean
 ---@param hasItem boolean
@@ -884,7 +1020,7 @@ function GMR.IsConjuredItem() end
 function GMR.IsConnectionPointReachable() end
 function GMR.IsCustomObjectId() end
 function GMR.IsCustomPathHandling() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsDead(unit) end
 function GMR.IsDeathSkipping() end
@@ -894,7 +1030,7 @@ function GMR.IsDisenchantingValid() end
 ---@param itemId number
 ---@return boolean
 function GMR.IsDrinkable(itemId) end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsDrinking(unit) end
 function GMR.IsDrowning() end
@@ -904,7 +1040,7 @@ function GMR.IsDungeonProfile() end
 ---@param itemId number
 ---@return boolean
 function GMR.IsEatable(itemId) end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsEating(unit) end
 function GMR.IsEnemyNearPosition() end
@@ -926,7 +1062,7 @@ function GMR.IsFlyingDisabled() end
 ---@return boolean
 function GMR.IsFullyLoaded() end
 function GMR.IsGasCloud() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsGhost(unit) end
 function GMR.IsGossipButtonVisible() end
@@ -941,7 +1077,7 @@ function GMR.IsHyperspawnFarming() end
 function GMR.IsHyperspawnProfile() end
 function GMR.IsIdling() end
 function GMR.IsIgnoringCombat() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsImmune(unit) end
 function GMR.IsInAuberdine() end
@@ -956,7 +1092,7 @@ function GMR.IsInPartyMode() end
 function GMR.IsInVehicle() end
 function GMR.IsInVendorMode() end
 function GMR.IsInteractingWithTrainer() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsInterruptable(unit) end
 function GMR.IsInvalidMesh() end
@@ -1001,13 +1137,13 @@ function GMR.IsObjectIndoors() end
 ---@param object userdata
 ---@return boolean
 function GMR.IsObjectInteractable(object) end
----@param object string|userdata
+---@param object string|any
 ---@return boolean
 function GMR.IsObjectLootable(object) end
 function GMR.IsObjectPickPocketable() end
 function GMR.IsObjectPosition(object) end
 function GMR.IsObjectSet() end
----@param object string|userdata
+---@param object string|any
 ---@return boolean
 function GMR.IsObjectSkinnable(object) end
 function GMR.IsObjectTapDenied() end
@@ -1085,7 +1221,7 @@ function GMR.IsSelling() end
 function GMR.IsShapeshiftable() end
 function GMR.IsShapeshifted() end
 ---@param spell string
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsShapeshiftedCastable(spell, unit) end
 function GMR.IsShooting() end
@@ -1094,7 +1230,7 @@ function GMR.IsSkinnedObject() end
 function GMR.IsSpeedUpDenied() end
 function GMR.IsSpellImmune() end
 ---@param spell string
----@param unit string|userdata
+---@param unit string|any
 function GMR.IsSpellInRange(spell, unit) end
 ---@param spell string|number
 ---@return boolean
@@ -1126,7 +1262,7 @@ function GMR.IsTrinketUsable() end
 function GMR.IsTurnInSkipped() end
 function GMR.IsUnitFlying() end
 ---Wether unit was killed by player or not
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsUnitKilledByPlayer(unit) end
 function GMR.IsUnitWalking() end
@@ -1143,7 +1279,7 @@ function GMR.IsVendoring() end
 function GMR.IsWandUsable() end
 function GMR.IsWanding() end
 ---@param spell string
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.IsWarriorCastable(spell, unit) end
 function GMR.IsWeapon() end
@@ -1218,28 +1354,28 @@ function GMR.ObfuscateUnitPosition() end
 function GMR.ObjectAnimationFlag() end
 ---@return number
 function GMR.ObjectCount() end
----@param unit string|userdata
+---@param unit string|any
 ---@return number creatureTypeId
 function GMR.ObjectCreatureTypeId(unit) end
----@param object string|userdata
+---@param object string|any
 ---@return any @???
 function GMR.ObjectDynamicFlags(object) end
----@param object string|userdata
+---@param object string|any
 ---@return boolean
 function GMR.ObjectExists(object) end
----@param object string|userdata
+---@param object string|any
 ---@return any @???
 function GMR.ObjectFlags(object) end
----@param object string|userdata
+---@param object string|any
 ---@return any @???
 function GMR.ObjectFlags2(object) end
 function GMR.ObjectHasGossip() end
----@param object string|userdata
+---@param object string|any
 ---@return number object id
 function GMR.ObjectId(object) end
 function GMR.ObjectInteract() end
----@param object1 string|userdata
----@param object2 string|userdata
+---@param object1 string|any
+---@param object2 string|any
 ---@return boolean
 function GMR.ObjectIsFacing(object1, object2) end
 function GMR.ObjectName() end
@@ -1248,7 +1384,7 @@ function GMR.ObjectPointer() end
 ---@return number,number,number x,y,z
 function GMR.ObjectPosition(object) end
 function GMR.ObjectRawFacing() end
----@param object string|userdata
+---@param object string|any
 ---@return number object raw type
 function GMR.ObjectRawType(object) end
 function GMR.ObjectTarget() end
@@ -1406,7 +1542,7 @@ function GMR.StrafeRightStop() end
 function GMR.SwitchFishingWeapons() end
 function GMR.TargetObject() end
 function GMR.TargetTrainer() end
----@param unit string|userdata
+---@param unit string|any
 function GMR.TargetUnit(unit) end
 function GMR.TempBlacklistSetNode() end
 function GMR.TimerExecution() end
@@ -1421,25 +1557,25 @@ function GMR.TurnLeftStart() end
 function GMR.TurnLeftStop() end
 function GMR.TurnRightStart() end
 function GMR.TurnRightStop() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.UnitAffectingCombat(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@param index number
 ---@param unknownArg any Maybe someone can tell about that arg
----@param buffOwnerUnit string|userdata owner of the buff
+---@param buffOwnerUnit string|any owner of the buff
 ---@return string, number, number, string, number, number, string, boolean, boolean, number  name, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellId
 function GMR.UnitBuff(unit, index, unknownArg, buffOwnerUnit) end
----@param unit string|userdata
----@param anotherUnit string|userdata
+---@param unit string|any
+---@param anotherUnit string|any
 ---@return boolean
 function GMR.UnitCanAttack(unit, anotherUnit) end
 function GMR.UnitCanHeal() end
----@param unit string|userdata
+---@param unit string|any
 ---@return string, string, number, number, number, boolean, string, boolean, number name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellId
 function GMR.UnitCastingInfo(unit) end
 ---Wether units cast is < than timeInSec
----@param unit string|userdata
+---@param unit string|any
 ---@param timeInSec number
 ---@return boolean
 function GMR.UnitCastingTime(unit, timeInSec) end
@@ -1447,31 +1583,31 @@ function GMR.UnitChannelInfo() end
 function GMR.UnitClass() end
 function GMR.UnitClassification() end
 function GMR.UnitCreatureType() end
----@param unit string|userdata
+---@param unit string|any
 ---@param index number
 ---@return string, number, number, string, number, number, nil, boolean, boolean, number, boolean, boolean, boolean, boolean, number, boolean Locale name, ?, ?, type, duration, expireAtTime, ?, ?, skillId, ?, ?, ?, ?, ?, ?
 function GMR.UnitDebuff(unit, index) end
 function GMR.UnitDetailedThreatSituation() end
 function GMR.UnitExists() end
----@param unit string|userdata
+---@param unit string|any
 ---@return string "Alliance" or "Horde"
 function GMR.UnitFactionGroup(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return string
 function GMR.UnitGUID(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.UnitHasPaladinAura(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.UnitHasPaladinBuff(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.UnitHasScrollBuff(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return number
 function GMR.UnitHealth(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return number
 function GMR.UnitHealthMax(unit) end
 function GMR.UnitInParty() end
@@ -1480,10 +1616,10 @@ function GMR.UnitInteract() end
 function GMR.UnitIsAFK() end
 function GMR.UnitIsAttackable() end
 function GMR.UnitIsCorpse() end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.UnitIsDead(unit) end
----@param unit string|userdata
+---@param unit string|any
 ---@return boolean
 function GMR.UnitIsDeadOrGhost(unit) end
 function GMR.UnitIsFacing() end
@@ -1492,32 +1628,32 @@ function GMR.UnitIsPlayer() end
 function GMR.UnitIsTapDenied() end
 function GMR.UnitIsTrivial() end
 ---Compare two units
----@param unit1 string|userdata
----@param unit2 string|userdata
+---@param unit1 string|any
+---@param unit2 string|any
 ---@return boolean
 function GMR.UnitIsUnit(unit1, unit2) end
 function GMR.UnitIsVisible() end
----@param unit string|userdata
+---@param unit string|any
 ---@return number
 function GMR.UnitLevel(unit) end
 function GMR.UnitMovementFlags() end
----@param unit string|userdata
+---@param unit string|any
 ---@return string
 function GMR.UnitName(unit) end
 function GMR.UnitPlayerControlled() end
----@param unit string|userdata
+---@param unit string|any
 ---@param powerType number Power type (Optional) (3-energy,4-combo points)
 ---@return number
 function GMR.UnitPower(unit, powerType) end
----@param unit string|userdata
+---@param unit string|any
 ---@param powerType number Power type (Optional) (3-energy,4-combo points)
 ---@return number
 function GMR.UnitPowerMax(unit, powerType) end
 function GMR.UnitPowerType() end
 function GMR.UnitRace() end
 function GMR.UnitReaction() end
----@param unit string|userdata
----@return string|userdata
+---@param unit string|any
+---@return string|any
 function GMR.UnitTarget(unit) end
 function GMR.UnitThreatSituation() end
 function GMR.Unshift() end

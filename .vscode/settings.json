@@ -10,7 +10,7 @@
 	"typescript.tsc.autoDetect": "off",
 	"Lua.workspace.library": [
 		".\\.types\\.SubModules\\BlizzardInterfaceCode",
-		"~\\.vscode\\extensions\\ketho.wow-api-0.21.0\\Annotations\\Core"
+		"~\\.vscode\\extensions\\ketho.wow-api-0.21.0\\Annotations\\Core",
 	],
 	"Lua.runtime.version": "Lua 5.1",
 	"Lua.runtime.builtin": {
