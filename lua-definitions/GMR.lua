@@ -1180,52 +1180,90 @@ function GMR.GetMinMoneyRequired() end
 ---@return any
 function GMR.GetMinimumInventorySpace() end
 
+---@return any
 function GMR.GetMinimumLevel() end
 
+---@return any
 function GMR.GetMinimumLevelDefault() end
 
+---@return any
 function GMR.GetMinimumLevelState() end
 
+---@return any
 function GMR.GetMinimumLevelValue() end
 
+---@return any
 function GMR.GetMinimumMailingInventorySpace() end
 
+---@return any
 function GMR.GetMiningInfo() end
 
-function GMR.GetMode() end
+---@param mode any?
+---@return any
+function GMR.GetMode(mode) end
 
+---@return any
 function GMR.GetMount() end
 
+---@return any
 function GMR.GetNearbyEnemy() end
 
 ---@param distance number
 ---@return table<string, GMR_Helper.Object> Map objectId to Object
 function GMR.GetNearbyObjects(distance) end
 
-function GMR.GetNearbyPosition() end
+---@param px number
+---@param py number
+---@param pz number
+---@param x number
+---@param y number
+---@param z number
+---@return any
+function GMR.GetNearbyPosition(px, py, pz, x, y, z) end
 
+---@return any
 function GMR.GetNearestCentralPoint() end
 
+---@return any
 function GMR.GetNearestMailboxPathPoint() end
 
+---@return any
 function GMR.GetNearestObject() end
 
 function GMR.GetNearestPartyPlayerCluster() end
 
-function GMR.GetNearestTableEntry() end
+---@param t any?
+---@return any
+function GMR.GetNearestTableEntry(t) end
 
-function GMR.GetNearestVendorPathPoint() end
+---@param vendorType any
+---@return any
+function GMR.GetNearestVendorPathPoint(vendorType) end
 
+---@return any
 function GMR.GetNextCentralPoint() end
 
+---@return any
 function GMR.GetNextQuest() end
 
+---@return any
 function GMR.GetNextTalent() end
 
+---@return any
 function GMR.GetNode() end
 
-function GMR.GetNormalPositionFromPosition() end
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param where any?
+---@param distance any?
+---@return any
+function GMR.GetNormalPositionFromPosition(x1, y1, z1, x2, y2, z2, where, distance) end
 
+---@return number
 function GMR.GetNumAmmo() end
 
 ---@param unit string|any
@@ -1233,14 +1271,19 @@ function GMR.GetNumAmmo() end
 ---@return number
 function GMR.GetNumAttackingEnemies(unit, distance) end
 
+---@return number
 function GMR.GetNumBuyingAmmo() end
 
+---@return number
 function GMR.GetNumBuyingDrinks() end
 
+---@return number
 function GMR.GetNumBuyingFoods() end
 
+---@return number
 function GMR.GetNumDrink() end
 
+---@return number
 function GMR.GetNumDungeonTimers() end
 
 ---@param unit string|any
@@ -1248,90 +1291,215 @@ function GMR.GetNumDungeonTimers() end
 ---@return number
 function GMR.GetNumEnemies(unit, distance) end
 
-function GMR.GetNumEnemiesAtXYZ() end
+---@param x number
+---@param y number
+---@param z number
+---@param distance number
+---@return number
+function GMR.GetNumEnemiesAtXYZ(x, y, z, distance) end
 
+---@return number
 function GMR.GetNumEnemyPlayersAroundPosition() end
 
+---@return number
 function GMR.GetNumEnemyPlayersAroundUnit() end
 
+---@return number
 function GMR.GetNumFood() end
 
+---@return number
 function GMR.GetNumFreeTalents() end
 
-function GMR.GetNumFriends() end
+---@param unit string|any
+---@param distance number
+---@return number
+function GMR.GetNumFriends(unit, distance) end
 
+---@return number
 function GMR.GetNumPartyMembers() end
 
+---@return number
 function GMR.GetNumPartyMembersAroundPosition() end
 
 ---@param unit string|any
 ---@param distance number
 ---@return number
 function GMR.GetNumPartyMembersAroundUnit(unit, distance) end
+
+---@return number
 function GMR.GetNumQuests() end
+
+---@return number
 function GMR.GetNumRunes() end
+
+---@return number
 function GMR.GetNumSelectedBattlegroundsNotInQueue() end
+
 ---Return number of scanned enemies around player
 ---@return number
 function GMR.GetNumSurroundingEnemies() end
-function GMR.GetNumericDropdownValue() end
-function GMR.GetObject() end
-function GMR.GetObjectWithFlag() end
+
+---@param dropdown any
+---@return any
+function GMR.GetNumericDropdownValue(dropdown) end
+
+---@param name string
+---@return any
+function GMR.GetObject(name) end
+
+---@param id number
+---@param dynamicFlag any 
+---@return any
+function GMR.GetObjectWithFlag(id, dynamicFlag) end
+
+---@return any
 function GMR.GetObjectWithIndex() end
+
 ---Example: object = GetObjectWithInfo({ id = 123, rawType = 8, isAlive = true, inCombat = true, speed = 3 })
 ---@param object GMR_Helper.GetObjectWithInfo Contains filters to find specific objects
 ---@return table founded object
 function GMR.GetObjectWithInfo(object) end
-function GMR.GetObjectWithXYZ() end
+
+---@param x number
+---@param y number
+---@param z number
+---@param id number
+---@param dynamicFlag any
+---@return any
+function GMR.GetObjectWithXYZ(x, y, z, id, dynamicFlag) end
+
+---@return number
 function GMR.GetObstacleDistance() end
+
+---@return any
 function GMR.GetOppositeFaction() end
+
+---@return any
 function GMR.GetOreMinimumValue() end
+
+---@return any
 function GMR.GetParty1Pointer() end
+
+---@return any
 function GMR.GetParty2Pointer() end
+
+---@return any
 function GMR.GetParty3Pointer() end
+
+---@return any
 function GMR.GetParty4Pointer() end
+
+---@return any
 function GMR.GetPartyBuff() end
+
+---@return any
 function GMR.GetPartyBuffs() end
-function GMR.GetPartyCorpsePosition() end
+
+---@param unit string|any
+---@return any
+function GMR.GetPartyCorpsePosition(unit) end
+
+---@return any
 function GMR.GetPartyEnemy() end
+
+---@return any
 function GMR.GetPartyHealer() end
+
+---@return any
 function GMR.GetPartyHealerPointer() end
-function GMR.GetPartyHealth() end
+
+---@param health any
+---@param spell any
+---@param debuff any
+---@param buff any
+---@return any
+function GMR.GetPartyHealth(health, spell, debuff, buff) end
+
+---@return any
 function GMR.GetPartyHealthOverall() end
+
+---@return any
 function GMR.GetPartyLeader() end
+
+---@return any
 function GMR.GetPartyLeaderXYZ() end
+
+---@return any
 function GMR.GetPartyModeChannel() end
+
+---@return any
 function GMR.GetPartyModeChannelIndex() end
+
 ---@param destX number
 ---@param destY number
 ---@param destZ number
 ---@param isHardcoded boolean
 ---@return any @???
 function GMR.GetPath(destX, destY, destZ, isHardcoded) end
+
+---@return any
 function GMR.GetPathBetweenPoints() end
-function GMR.GetPercentDropdownValue() end
+
+---@param dropdown any?
+---@return any
+function GMR.GetPercentDropdownValue(dropdown) end
+
+---@return any
 function GMR.GetPetFood() end
+
 ---@param spell string
----@return number @?????
+---@return number
 function GMR.GetPetHealthFilter(spell) end
+
+---@return any
 function GMR.GetPetPointer() end
-function GMR.GetPickPocketWaypointIndex() end
+
+---@param dungeon any
+---@param location any
+---@return any
+function GMR.GetPickPocketWaypointIndex(dungeon, location) end
+
+---@return number
 function GMR.GetPitch() end
-function GMR.GetPitchBetweenCoordinates() end
+
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@return number
+function GMR.GetPitchBetweenCoordinates(x1, y1, z1, x2, y2, z2) end
+
+---@return any
 function GMR.GetPitchTurnDirection() end
+
+---@return number
 function GMR.GetPitchTurningSpeed() end
+
 ---@return userdata Unlocker specific object
 function GMR.GetPlayerAttackingEnemy() end
+
 ---The closest object attacking player
 ---@return userdata Unlocker specific object
 function GMR.GetPlayerAttackingPlayer() end
+
+---@return any
 function GMR.GetPlayerPointer() end
+
+---@return number x, number y, number z
 function GMR.GetPlayerPosition() end
-function GMR.GetPositionAroundObjectOnCircle() end
----@type string|any object
----@type number distance
----@return number, number, number x, y, z of new position
+
+---@param object any
+---@param radius number
+---@return any
+function GMR.GetPositionAroundObjectOnCircle(object, radius) end
+
+---@param object string|any 
+---@param distance number 
+---@return number x, number y, number z
 function GMR.GetPositionBehindPlayer(object, distance) end
+
 ---@param x1 number
 ---@param y1 number
 ---@param z1 number
@@ -1339,223 +1507,594 @@ function GMR.GetPositionBehindPlayer(object, distance) end
 ---@param y2 number
 ---@param z2 number
 ---@param distance number
----@return number, number, number x, y, z of new position
+---@return number x, number y, number z
 function GMR.GetPositionBetweenPositions(x1, y1, z1, x2, y2, z2, distance) end
-function GMR.GetPositionFromPosition() end
-function GMR.GetPositionFromPositionInLoS() end
-function GMR.GetPositionsBetweenPositions() end
+
+---@param x number
+---@param y number
+---@param z number
+---@param distance number
+---@param angleXY number
+---@param angleXYZ number
+---@return number x, number y, number z
+function GMR.GetPositionFromPosition(x, y, z, distance, angleXY, angleXYZ) end
+
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@return number x, number y, number z
+function GMR.GetPositionFromPositionInLoS(x1, y1, z1, x2, y2, z2) end
+
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param split any?
+---@return any
+function GMR.GetPositionsBetweenPositions(x1, y1, z1, x2, y2, z2, split) end
+
 ---@param spell string
----@return number @???
+---@return number
 function GMR.GetPowerFilter(spell) end
-function GMR.GetProfessionInfo() end
+
+---@param skillIndex number
+---@return any
+function GMR.GetProfessionInfo(skillIndex) end
+
+---@return any
 function GMR.GetProfessionTrainer() end
+
+---@return any
 function GMR.GetProfessions() end
+
+---@return number
 function GMR.GetProfileContinentId() end
+
+---@return any
 function GMR.GetProfileFolders() end
+
+---@return any
 function GMR.GetProfileHearthstoneBindLocation() end
+
+---@return any
 function GMR.GetProfileMailbox() end
+
 ---@return string profile name
 function GMR.GetProfileName() end
+
 ---@return string profile type
 function GMR.GetProfileType() end
-function GMR.GetProfiles() end
+
+---@param folder string?
+---@return any
+function GMR.GetProfiles(folder) end
+
+---@return number
 function GMR.GetPullCount() end
+
+---@return any
 function GMR.GetPulledEnemies() end
+
+---@return any
 function GMR.GetPushoverKey() end
+
+---@return any
 function GMR.GetPvPEnemy() end
-function GMR.GetQuestButton() end
+
+---@param questType any
+---@return any
+function GMR.GetQuestButton(questType) end
+
+---@return any
 function GMR.GetQuestGossip() end
+
+---@return any
 function GMR.GetQuestId() end
-function GMR.GetQuestNpcIds() end
+
+---@param id number
+---@return any
+function GMR.GetQuestNpcIds(id) end
+
+---@return number
 function GMR.GetQuestingIndex() end
+
+---@return any
 function GMR.GetQuestingState() end
+
 ---@param unit string|any
 ---@return string
 function GMR.GetRace(unit) end
+
+---@return any
 function GMR.GetRacialSpell() end
+
 ---@param unit string|any
----@return number unit's rage
+---@return number @unit's rage
 function GMR.GetRage(unit) end
+
+---@return any
 function GMR.GetRealTalentPosition() end
+
+---@return any
 function GMR.GetRelogTimerValue() end
+
+---@return any
 function GMR.GetRepairStatus() end
+
+---@return any
 function GMR.GetRepairValue() end
+
+---@return any
 function GMR.GetResurrectableMember() end
-function GMR.GetResurrectingUnit() end
+
+---@param bool boolean?
+---@return any
+function GMR.GetResurrectingUnit(bool) end
+
+---@return any
 function GMR.GetSafePosition() end
+
+---@return any
 function GMR.GetSavedEnemy() end
+
+---@return any
 function GMR.GetSavedProfile() end
+
+---@return any
+function GMR.GetSavedProfileCreator() end
+
+---@return any
 function GMR.GetSavedProfileFolder() end
+
+---@return number
 function GMR.GetSavedProfileIndex() end
+
+---@return any
 function GMR.GetSavedProfileType() end
+
+---@return any
 function GMR.GetSavedQuester() end
+
+---@return any
 function GMR.GetScanRadius() end
+
+---@return any
+function GMR.GetSelectedSpecializationValue() end
+
+---@return any
 function GMR.GetSessionId() end
+
+---@return any
 function GMR.GetSessionIndex() end
-function GMR.GetShapeshift() end
+
+---@param form any
+---@return any
+function GMR.GetShapeshift(form) end
+
+---@return any
 function GMR.GetShapeshiftFormManaCosts() end
-function GMR.GetShardDropdownValue() end
+
+---@param dropdown any
+---@return any
+function GMR.GetShardDropdownValue(dropdown) end
+
 ---@param spell string
----@return number @????
+---@return number
 function GMR.GetShardsFilter(spell) end
+
+---@return any
 function GMR.GetShutdownTimerValue() end
+
+---@return any
 function GMR.GetSkinningDelay() end
+
+---@return any
 function GMR.GetSkinningInfo() end
+
+---@return any
 function GMR.GetSkinningObject() end
-function GMR.GetSmoothPath() end
+
+---@param path any
+---@param split any
+---@return any
+function GMR.GetSmoothPath(path, split) end
+
+---@return any
 function GMR.GetSoulstoneCast() end
+
+---@return any
 function GMR.GetSpecialization() end
+
+---@return any
 function GMR.GetSpeedDistance() end
+
 ---@param spell string
 ---@return number
 function GMR.GetSpellCooldown(spell) end
+
 ---@param spell string
----@return number @????
+---@return number
 function GMR.GetStackFilter(spell) end
+
+---@return any
 function GMR.GetSubdirectories() end
-function GMR.GetSurroundingWaterXYZ() end
-function GMR.GetTexture() end
-function GMR.GetThreat() end
+
+---@param points any
+---@param radius number
+---@return any
+function GMR.GetSurroundingWaterXYZ(points, radius) end
+
+---@param spellId number
+---@return any
+function GMR.GetTexture(spellId) end
+
+---@param unit string|any
+---@param otherUnit string|any
+---@param var any?
+---@param value any?
+---@return any
+function GMR.GetThreat(unit, otherUnit, var, value) end
+
 ---@return number
 function GMR.GetTime() end
+
+---@return any
 function GMR.GetTradeRecipient() end
+
+---@return any
 function GMR.GetTrainingOption() end
+
+---@return any
 function GMR.GetTrainingSpell() end
-function GMR.GetTrinketInfo() end
+
+---@param slot any
+---@return any
+function GMR.GetTrinketInfo(slot) end
+
+---@return any
 function GMR.GetTurnDirection() end
-function GMR.GetTurningSpeed() end
-function GMR.GetTurningSpeedExtra() end
-function GMR.GetUnitDropdownValue() end
+
+---@param type any
+---@return number
+function GMR.GetTurningSpeed(type) end
+
+---@param distance number
+---@return number
+function GMR.GetTurningSpeedExtra(distance) end
+
+---@param dropdown any
+---@return any
+function GMR.GetUnitDropdownValue(dropdown) end
+
 ---@param spell string
----@return number @????
+---@return number
 function GMR.GetUnitFilter(spell) end
-function GMR.GetUnitSpeed() end
-function GMR.GetUnitZoneId() end
-function GMR.GetUnlocker() end
+
+---@param unit string|any
+---@return number
+function GMR.GetUnitSpeed(unit) end
+
+---@param unit string|any
+---@return any
+function GMR.GetUnitZoneId(unit) end
+
+---@param x any?
+---@return any
+function GMR.GetUnlocker(x) end
+
+---@return any
 function GMR.GetUsableItem() end
+
+---@return number
 function GMR.GetVehicleSpeed() end
-function GMR.GetVendor() end
-function GMR.GetVendorMode() end
-function GMR.GetVendorPath() end
-function GMR.GetWeaponDropdownValue() end
+
+---@param vendor any 
+---@return any
+function GMR.GetVendor(vendor) end
+
+---@param x any?
+---@param bool any?
+---@return any
+function GMR.GetVendorMode(x, bool) end
+
+---@param vendorType any
+---@return any
+function GMR.GetVendorPath(vendorType) end
+
+---@param dropdown any
+---@return any
+function GMR.GetWeaponDropdownValue(dropdown) end
+
 ---@param spell string
----@return number @????
+---@return number
 function GMR.GetWeaponFilter(spell) end
+
+---@return any
 function GMR.GetWeaponStatus() end
-function GMR.GetWhisperResponse() end
+
+---@param str string
+---@return any
+function GMR.GetWhisperResponse(str) end
+
+---@return any
 function GMR.GetWoWVisionToken() end
+
 ---@param mapId string
 ---@param x number
 ---@param y number
 ---@return any @???
 function GMR.GetWorldPositionFromMap(mapId, x, y) end
+
 function GMR.GetWowMapId() end
-function GMR.GetX() end
+
+---@param word any?
+---@return any
+function GMR.GetX(word) end
+
+---@return any
 function GMR.GetXYZ() end
+
+---@return number
 function GMR.GetYawTurningSpeed() end
-function GMR.GetZCoordinate() end
+
+---@param x number
+---@param y number
+---@param r any?
+---@return number z-coordinage
+function GMR.GetZCoordinate(x, y, r) end
+
+---@return number
 function GMR.GetZoneId() end
-function GMR.GryphonMasterHandler() end
-function GMR.GuidToLetter() end
+
+---@param gryphonX number
+---@param gryphonY number
+---@param gryphonZ number
+---@param gryphonId number
+---@param gryphonDestX number
+---@param gryphonDestY number
+---@param gryphonDestZ number
+---@param gryphonDestId number
+---@param nodeX number
+---@param nodeY number
+function GMR.GryphonMasterHandler(gryphonX, gryphonY, gryphonZ, gryphonId, gryphonDestX, gryphonDestY, gryphonDestZ, gryphonDestId, nodeX, nodeY) end
+
+---@param guid any
+function GMR.GuidToLetter(guid) end
+
+---@return any
 function GMR.HandleCustomPath() end
+
 ---Check buff on unit. Buff from any source, it may be player, other players, npcs
 ---@param unit string|any
 ---@param buff string
 ---@param byPlayer boolean Wether the buff was casted by player or not
 ---@return boolean
 function GMR.HasBuff(unit, buff, byPlayer) end
-function GMR.HasBuffId() end
-function GMR.HasBuffStacks() end
+
+---@param unit string|any
+---@param buffId any
+---@param byPlayer boolean Wether the buff was casted by player or not
+---@return boolean
+function GMR.HasBuffId(unit, buffId, byPlayer) end
+
+---@param unit string|any
+---@param buff string
+---@param count number
+---@return boolean
+function GMR.HasBuffStacks(unit, buff, count) end
+
+---@return any
 function GMR.HasColdWeatherFlying() end
+
 ---Check debuff on unit. Debuff from any source, it may be player, other players, npcs
 ---@param unit string|any
 ---@param debuff string
 ---@param byPlayer boolean
 ---@return boolean
 function GMR.HasDebuff(unit, debuff, byPlayer) end
-function GMR.HasDebuffStacks() end
+
+---@param unit string|any
+---@param buff string
+---@param count number
+---@return boolean
+function GMR.HasDebuffStacks(unit, buff, count) end
+
+---@return boolean
 function GMR.HasHerbalism() end
+
+---@return boolean
 function GMR.HasManaGem() end
-function GMR.HasMinimumSkillLevel() end
+
+---@param prof any
+---@param object any
+---@return boolean
+function GMR.HasMinimumSkillLevel(prof, object) end
+
+---@return boolean
 function GMR.HasMining() end
-function GMR.HasMoney() end
+
+---@param amount number
+---@return boolean
+function GMR.HasMoney(amount) end
+
+---@return boolean
 function GMR.HasPetSacrificeBuff() end
+
 ---Check unit has player's buff
 ---@param unit string|any
 ---@param buff string
 ---@return boolean
 function GMR.HasPlayerBuff(unit, buff) end
+
 ---Check unit has debuff, that belongs to player
 ---@param unit string|any
 ---@param debuff string
 ---@return boolean
 function GMR.HasPlayerDebuff(unit, debuff) end
+
 ---Get stacks count of player's debuff on unit (?)
 ---(NEED TEST)
 ---@param unit string|any
 ---@param debuff string
 ---@return number count of stacks
 function GMR.HasPlayerDebuffStacks(unit, debuff) end
+
+---@return boolean
 function GMR.HasSkinning() end
-function GMR.HasTalent() end
+
+---@param talent any
+---@param points any?
+---@return boolean
+function GMR.HasTalent(talent, points) end
+
+---@return boolean
 function GMR.HasToFight() end
+
+---@return boolean
 function GMR.HasTotem() end
+
+---@return boolean
 function GMR.HasVendorMount() end
-function GMR.Heal() end
+
+---@param unit string|any
+function GMR.Heal(unit) end
+
+---@return boolean
 function GMR.HealthstoneExists() end
+
 function GMR.HideErrors() end
+
 function GMR.HideUnavailableTrainerSpells() end
+
 ---@param name string
-function GMR.ImportSettings(name) end
+---@param folder any?
+function GMR.ImportSettings(name, folder) end
+
 ---Wether a given unit is in combat or not [and being targeted or not]
 ---@param unit string|any
 ---@param isBeingTargeted boolean ether the unit is being targeted or not
 ---@return boolean
 function GMR.InCombat(unit, isBeingTargeted) end
-function GMR.InFrontOfCamera() end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.InFrontOfCamera(x, y, z) end
+
 ---Wether unit and otherUnit are in line of sight
 ---@param unit string|any
 ---@param otherUnit string|any
 ---@return boolean
 function GMR.InLoS(unit, otherUnit) end
-function GMR.InMeeleRange(unit, anotherUnit) end
-function GMR.Interact() end
+
+---@param unit string|any
+---@param anotherUnit string|any
+---@param class any?
+function GMR.InMeeleRange(unit, anotherUnit, class) end
+
+---@param height number
+function GMR.IncreaseProfileHeight(height) end
+
+---@param object string|any
+function GMR.Interact(object) end
+
+---no info
 function GMR.InteractObject() end
+
+---no info
 function GMR.InteractUnit() end
-function GMR.InteractVendor() end
+
+---@param x number
+---@param y number
+---@param z number
+---@param id number
+function GMR.InteractVendor(x, y, z, id) end
+
+---@return boolean
 function GMR.IsAdmin() end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsAlive(unit) end
-function GMR.IsAmmoBag() end
+
+---@param slot number
+---@return boolean
+function GMR.IsAmmoBag(slot) end
+
+---@return boolean
 function GMR.IsAmmoEquipped() end
-function GMR.IsAmmoItem() end
+
+---@param itemId number
+---@return boolean
+function GMR.IsAmmoItem(itemId) end
+
 ---@param spell string
 ---@param unit string|any
 ---@return boolean
 function GMR.IsAoECastable(spell, unit) end
-function GMR.IsArrayQuestComplete() end
+
+---@param i any
+---@return boolean
+function GMR.IsArrayQuestComplete(i) end
+
+---@return boolean
 function GMR.IsAttacking() end
-function GMR.IsAttackingHealer() end
-function GMR.IsAttackingLeader() end
+
+---@param enemy any
+---@return boolean
+function GMR.IsAttackingHealer(enemy) end
+
+---@param enemy any
+---@return boolean
+function GMR.IsAttackingLeader(enemy) end
+
+---@return boolean
 function GMR.IsAvoidingPvP() end
-function GMR.IsBandage() end
-function GMR.IsBandaging() end
+
+---@param itemId number
+---@return boolean
+function GMR.IsBandage(itemId) end
+
+---@param unit string|any
+---@return boolean
+function GMR.IsBandaging(unit) end
+
+---@return boolean
 function GMR.IsBattlegroundChecked() end
+
+---@return boolean
 function GMR.IsBattlegroundFinished() end
+
+---@return boolean
+function GMR.IsBattlegroundRoleSelected() end
+
 ---Wether the position is temporary blacklisted or not
 ---@param x number
 ---@param y number
 ---@param z number
 ---@return boolean
 function GMR.IsBlacklistedArea(x, y, z) end
+
 function GMR.IsBlacklistedEnemyAttacking() end
+
 function GMR.IsBlacklistedGUID() end
+
 function GMR.IsBlacklistedId() end
+
 function GMR.IsBlacklistedItem() end
+
 function GMR.IsBlacklistedNode() end
+
 function GMR.IsBuying() end
+
 function GMR.IsCachedEnemyNearPosition() end
+
 ---Check is spell can be casted
 ---@param spell string
 ---@param unit string|any
@@ -1566,173 +2105,307 @@ function GMR.IsCachedEnemyNearPosition() end
 ---@param hasItem boolean
 ---@return boolean
 function GMR.IsCastable(spell, unit, range, otherUnit, ignoreMana, ignoreCooldown, hasItem) end
+
 function GMR.IsCastableDistance() end
+
 ---@return string current casting spell name
 function GMR.IsCasting() end
+
 function GMR.IsCentralObject() end
+
 function GMR.IsCentralPointInRange() end
+
 function GMR.IsChecked() end
+
 ---@param itemId number
 ---@return boolean
 function GMR.IsCheckedItem(itemId) end
+
 ---@param spell string
 ---@return boolean
 function GMR.IsCheckedSpell(spell) end
+
 function GMR.IsChineseChar() end
+
 function GMR.IsClassTrainerNeeded() end
+
 function GMR.IsCleansable() end
+
 function GMR.IsClickedDungeonObject() end
+
 function GMR.IsCombatStrafingAllowed() end
+
 function GMR.IsConjurable() end
+
 function GMR.IsConjuredItem() end
+
 function GMR.IsConnectionPointReachable() end
+
 function GMR.IsCustomObjectId() end
+
 function GMR.IsCustomPathHandling() end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsDead(unit) end
+
 function GMR.IsDeathSkipping() end
+
 function GMR.IsDejunkActive() end
+
 function GMR.IsDestInsideBuilding() end
+
 function GMR.IsDisenchantingValid() end
+
 ---@param itemId number
 ---@return boolean
 function GMR.IsDrinkable(itemId) end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsDrinking(unit) end
+
 function GMR.IsDrowning() end
+
 function GMR.IsDungeonCompleted() end
+
 function GMR.IsDungeonProfile() end
+
 ---Wether the item is eatable or not
 ---@param itemId number
 ---@return boolean
 function GMR.IsEatable(itemId) end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsEating(unit) end
+
 function GMR.IsEnemyNearPosition() end
+
 function GMR.IsEnemyWithIdAttacking() end
+
 function GMR.IsEvadingEnemy() end
+
 ---Whether GMR is currently executing or not
 ---@return boolean
 function GMR.IsExecuting() end
+
 function GMR.IsFacingXYZ() end
+
 function GMR.IsFactionNPC() end
+
 function GMR.IsFishing() end
+
 function GMR.IsFishingLureApplyable() end
+
 function GMR.IsFlaggedObjectId() end
+
 function GMR.IsFlamestrikeUsable() end
+
 function GMR.IsFleeingEnemy() end
+
 function GMR.IsFlightmasterDiscoverable() end
+
 function GMR.IsFlyable() end
+
 function GMR.IsFlyingDisabled() end
+
 ---@return boolean
 function GMR.IsFullyLoaded() end
+
 function GMR.IsGasCloud() end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsGhost(unit) end
+
 function GMR.IsGossipButtonVisible() end
+
 function GMR.IsGroundPosition() end
+
 function GMR.IsGryphonMasterDenied() end
+
 function GMR.IsGryphonMasterKnown() end
+
 function GMR.IsGryphonMasterRequired() end
+
 function GMR.IsGryphonMasterStored() end
+
 function GMR.IsHealthPotion() end
+
 function GMR.IsHearthstoneSetable() end
+
 function GMR.IsHyperspawnFarming() end
+
 function GMR.IsHyperspawnProfile() end
+
 function GMR.IsIdling() end
+
 function GMR.IsIgnoringCombat() end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsImmune(unit) end
+
 function GMR.IsInAuberdine() end
+
 function GMR.IsInBaradinBay() end
+
 function GMR.IsInBattleground() end
+
 function GMR.IsInBattlegroundQueue() end
+
 function GMR.IsInDarkmaulCitadel() end
+
 function GMR.IsInDeeprunTramZone() end
+
 function GMR.IsInLoadingScreen() end
+
 function GMR.IsInNorthrend() end
+
 function GMR.IsInPartyMode() end
+
 function GMR.IsInVehicle() end
+
 function GMR.IsInVendorMode() end
+
 function GMR.IsInteractingWithTrainer() end
+
 ---@param unit string|any
 ---@return boolean
 function GMR.IsInterruptable(unit) end
+
 function GMR.IsInvalidMesh() end
+
 function GMR.IsInvalidVendor() end
+
 function GMR.IsItemDisenchantable() end
+
 ---Wether an item with itemId as ID exists in your bags or not
 ---@param itemId number
 ---@return boolean
 function GMR.IsItemInBags(itemId) end
+
 function GMR.IsLatinAlphabet() end
+
 function GMR.IsLibDrawValid() end
+
 function GMR.IsLoSMeshing() end
+
 function GMR.IsLootedObject() end
+
 function GMR.IsLooting() end
+
 function GMR.IsMageInParty() end
+
 function GMR.IsMailboxSet() end
+
 function GMR.IsMailing() end
+
 function GMR.IsMailingItem() end
+
 function GMR.IsMailingWhitelisted() end
+
 function GMR.IsManaPotion() end
+
 function GMR.IsMapLoaded() end
+
 function GMR.IsMassQuestId() end
+
 function GMR.IsMeshAreaBlacklisted() end
+
 function GMR.IsMeshLoaded() end
+
 function GMR.IsMeshPointSkipable() end
+
 function GMR.IsMountDenied() end
+
 function GMR.IsMountStuck() end
+
 function GMR.IsMountable() end
+
 function GMR.IsMoving() end
+
 function GMR.IsMovingValid() end
+
 function GMR.IsNearDestination() end
+
 function GMR.IsNearVendor() end
+
 function GMR.IsNearVendorPath() end
+
 function GMR.IsNearWaterSurface() end
+
 function GMR.IsNodeInteractable() end
+
 function GMR.IsNodeMaxGatheringRangeRequired() end
+
 function GMR.IsObjectCreatureType() end
+
 function GMR.IsObjectFleeing() end
+
 function GMR.IsObjectFound() end
+
 function GMR.IsObjectGatherable() end
+
 function GMR.IsObjectIndoors() end
+
 ---@param object userdata
 ---@return boolean
 function GMR.IsObjectInteractable(object) end
+
 ---@param object string|any
 ---@return boolean
 function GMR.IsObjectLootable(object) end
+
 function GMR.IsObjectPickPocketable() end
+
 function GMR.IsObjectPosition(object) end
+
 function GMR.IsObjectSet() end
+
 ---@param object string|any
 ---@return boolean
 function GMR.IsObjectSkinnable(object) end
+
 function GMR.IsObjectTapDenied() end
+
 function GMR.IsObjectZValid() end
+
 function GMR.IsOnExilesReachShip() end
+
 function GMR.IsOnMeshPoint() end
+
 function GMR.IsOutdoors() end
+
 function GMR.IsPaidPack() end
+
 function GMR.IsPartyAssistant() end
+
 function GMR.IsPartyEnemy() end
+
 function GMR.IsPartyGUID() end
+
 function GMR.IsPartyLeaderInInstance() end
+
 function GMR.IsPartyMember() end
+
 function GMR.IsPartyMemberResurrectable() end
+
 function GMR.IsPartyMissingGoods() end
+
 function GMR.IsPartyPreparing() end
+
 function GMR.IsPartyRecovering() end
+
 function GMR.IsPartyTogether() end
+
 function GMR.IsPathable() end
+
 function GMR.IsPetDenied() end
+
 function GMR.IsPetStarving() end
+
 ---Whether you are at x, y, z or not
 ---@param x number
 ---@param y number
@@ -1740,167 +2413,288 @@ function GMR.IsPetStarving() end
 ---@param radius number
 ---@return boolean
 function GMR.IsPlayerPosition(x, y, z, radius) end
+
 function GMR.IsPlayerStealthed() end
+
 function GMR.IsPlayerXY() end
+
 ---@param x number
 ---@param y number
 ---@param z number
 ---@return boolean
 function GMR.IsPointInTheAir(x, y, z) end
+
 ---@param x number
 ---@param y number
 ---@param z number
 ---@return boolean
 function GMR.IsPointUnderwater(x, y, z) end
+
 function GMR.IsPoisonItem() end
+
 function GMR.IsPositionBelowTerrain() end
+
 function GMR.IsPositionInArea() end
+
 function GMR.IsPositionInAuberdine() end
+
 function GMR.IsPositionInDunMorogh() end
+
 function GMR.IsPositionInLoS() end
+
 function GMR.IsPositionInPolygon() end
+
 function GMR.IsPositionInTeldrassil() end
+
 function GMR.IsPositionInThunderBluff() end
+
 function GMR.IsPositionOnMesh() end
+
 function GMR.IsPreparing() end
+
 function GMR.IsProwlCondition() end
+
 ---@param id number quest id
 ---@return boolean
 function GMR.IsQuestActive(id) end
+
 function GMR.IsQuestButtonVisible() end
+
 ---@param id number quest id
 ---@return boolean
 function GMR.IsQuestCompletable(id) end
+
 ---@param id number quest id
 ---@return boolean
 function GMR.IsQuestCompleted(id) end
+
 function GMR.IsQuestEnemyId() end
+
 function GMR.IsQuestEnemySet() end
+
 function GMR.IsQuestTraveling() end
+
 function GMR.IsQuesting() end
+
 function GMR.IsRangedEquipped() end
+
 function GMR.IsReadyToFly() end
+
 function GMR.IsRecovering() end
+
 function GMR.IsRefillDenied() end
+
 function GMR.IsRepairing() end
+
 function GMR.IsRepeatableQuestComplete() end
+
 function GMR.IsRepopAllowed() end
+
 function GMR.IsSelling() end
+
 function GMR.IsShapeshiftable() end
+
 function GMR.IsShapeshifted() end
+
 ---@param spell string
 ---@param unit string|any
 ---@return boolean
 function GMR.IsShapeshiftedCastable(spell, unit) end
+
 function GMR.IsShooting() end
+
 function GMR.IsSkinnable() end
+
 function GMR.IsSkinnedObject() end
+
 function GMR.IsSpeedUpDenied() end
+
 function GMR.IsSpellImmune() end
+
 ---@param spell string
 ---@param unit string|any
 function GMR.IsSpellInRange(spell, unit) end
+
 ---@param spell string|number
 ---@return boolean
 function GMR.IsSpellKnown(spell) end
+
 function GMR.IsSpellTrainable() end
+
 function GMR.IsSpellTraining() end
+
 ---@param spell string
 ---@return boolean
 function GMR.IsSpellUsable(spell) end
+
 function GMR.IsStandingCentral() end
+
 function GMR.IsStandingDistanced() end
+
 function GMR.IsStealthCondition() end
+
 function GMR.IsSummonedByPlayer() end
+
 function GMR.IsTableEntry() end
+
 function GMR.IsTableSortable() end
+
 function GMR.IsTamingUnit() end
+
 function GMR.IsTargetPosition() end
+
 function GMR.IsTargetable() end
+
 function GMR.IsTargetless() end
+
 function GMR.IsTempBlacklistedArea() end
+
 function GMR.IsTotem() end
+
 function GMR.IsTraceValid() end
+
 function GMR.IsTrainerDisplayingUnavailableSpells() end
+
 function GMR.IsTrainerFrameShown() end
+
 function GMR.IsTrainerTarget() end
+
 function GMR.IsTrainingDummy() end
+
 function GMR.IsTrainingSpellAvailable() end
+
 function GMR.IsTrinketUsable() end
+
 function GMR.IsTurnInSkipped() end
+
 function GMR.IsUnitFlying() end
+
 ---Wether unit was killed by player or not
 ---@param unit string|any
 ---@return boolean
 function GMR.IsUnitKilledByPlayer(unit) end
+
 function GMR.IsUnitWalking() end
+
 function GMR.IsUnstuckEnabled() end
+
 function GMR.IsUsingCTM() end
+
 function GMR.IsUsingPointSystem() end
+
 function GMR.IsValidDrink() end
+
 function GMR.IsValidFood() end
+
 function GMR.IsValidStringIndex() end
+
 function GMR.IsVendorId() end
+
 function GMR.IsVendorPosition() end
+
 function GMR.IsVendorSet() end
+
 function GMR.IsVendoring() end
+
 function GMR.IsWandUsable() end
+
 function GMR.IsWanding() end
+
 ---@param spell string
 ---@param unit string|any
 ---@return boolean
 function GMR.IsWarriorCastable(spell, unit) end
+
 function GMR.IsWeapon() end
+
 function GMR.IsWhitelistedItem() end
+
 ---Wether an item with itemId as ID is existant either in your bags or equipped
 ---@param itemId number
 ---@return boolean
 function GMR.ItemExists(itemId) end
+
 function GMR.ItemHandler() end
+
 function GMR.JoinBattlefield() end
+
 function GMR.JoinPartyModeChannel() end
+
 function GMR.Jump() end
+
 function GMR.JumpOrAscendStart() end
+
 function GMR.LaunchQuester() end
+
 function GMR.LoadCustomQuestingCode() end
+
 function GMR.LoadFile() end
+
 function GMR.LoadHearthstoneBindLocation() end
+
 function GMR.LoadMap() end
+
 function GMR.LoadMeshFiles() end
+
 function GMR.LoadNextQuest() end
+
 function GMR.LoadPickPocketHandler() end
+
 function GMR.LoadPlugins() end
+
 ---@param profileFolder string
 ---@param profileName string
 function GMR.LoadProfile(profileFolder, profileName) end
+
 ---@param questerName string
 function GMR.LoadQuester(questerName) end
+
 function GMR.LoadVariables() end
+
 ---Displays a given text in GMR_LOG
 ---@param msg string
 function GMR.Log(msg) end
+
 function GMR.Logout() end
+
 function GMR.LogoutTimerHandler() end
+
 function GMR.MailboxHandler() end
+
 function GMR.MailboxPathHandler() end
+
 function GMR.MapExists() end
+
 function GMR.MapMove() end
+
 function GMR.MerchantMenu() end
+
 function GMR.Mesh() end
+
 function GMR.MeshCallback() end
+
 function GMR.MeshHandler() end
+
 function GMR.MeshInLoS() end
+
 function GMR.MeshJump() end
+
 function GMR.MeshMovementHandler() end
+
 ---Meshes to a given position
 ---@param x number
 ---@param y number
 ---@param z number
 function GMR.MeshTo(x, y, z) end
+
 function GMR.ModifyPath() end
+
 function GMR.Mount() end
+
 function GMR.MountVendoring() end
+
 function GMR.MouseoverGryphonMaster() end
+
 function GMR.MoveBackwardStart() end
 function GMR.MoveBackwardStop() end
 function GMR.MoveForwardStart() end
