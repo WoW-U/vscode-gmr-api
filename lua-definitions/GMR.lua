@@ -2081,19 +2081,34 @@ function GMR.IsBattlegroundRoleSelected() end
 ---@return boolean
 function GMR.IsBlacklistedArea(x, y, z) end
 
+---@return boolean
 function GMR.IsBlacklistedEnemyAttacking() end
 
-function GMR.IsBlacklistedGUID() end
+---@param object any
+---@return boolean
+function GMR.IsBlacklistedGUID(object) end
 
-function GMR.IsBlacklistedId() end
+---@param object any
+---@return boolean
+function GMR.IsBlacklistedId(object) end
 
-function GMR.IsBlacklistedItem() end
+---@param itemName string
+---@return boolean
+function GMR.IsBlacklistedItem(itemName) end
 
-function GMR.IsBlacklistedNode() end
+---@param object any
+---@return boolean
+function GMR.IsBlacklistedNode(object) end
 
-function GMR.IsBuying() end
+---@param vendor any?
+---@return boolean
+function GMR.IsBuying(vendor) end
 
-function GMR.IsCachedEnemyNearPosition() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsCachedEnemyNearPosition(x, y, z) end
 
 ---Check is spell can be casted
 ---@param spell string
@@ -2106,16 +2121,27 @@ function GMR.IsCachedEnemyNearPosition() end
 ---@return boolean
 function GMR.IsCastable(spell, unit, range, otherUnit, ignoreMana, ignoreCooldown, hasItem) end
 
-function GMR.IsCastableDistance() end
 
----@return string current casting spell name
-function GMR.IsCasting() end
+---@param spell string
+---@param unit string|any
+---@param distance number
+---@return boolean
+function GMR.IsCastableDistance(spell, unit, distance) end
 
-function GMR.IsCentralObject() end
+---@param unit string|any?
+---@return string @current casting spell name
+function GMR.IsCasting(unit) end
 
+---@param object any
+---@return boolean
+function GMR.IsCentralObject(object) end
+
+---@return boolean
 function GMR.IsCentralPointInRange() end
 
-function GMR.IsChecked() end
+---@param var any
+---@return boolean
+function GMR.IsChecked(var) end
 
 ---@param itemId number
 ---@return boolean
@@ -2125,36 +2151,59 @@ function GMR.IsCheckedItem(itemId) end
 ---@return boolean
 function GMR.IsCheckedSpell(spell) end
 
+---@return boolean
 function GMR.IsChineseChar() end
 
+---@return boolean
 function GMR.IsClassTrainerNeeded() end
 
-function GMR.IsCleansable() end
+---@param unit string|any
+---@param debuffType any
+---@return boolean
+function GMR.IsCleansable(unit, debuffType) end
 
-function GMR.IsClickedDungeonObject() end
+---@param x any
+---@return boolean
+function GMR.IsClickedDungeonObject(x) end
 
+---@return boolean
 function GMR.IsCombatStrafingAllowed() end
 
-function GMR.IsConjurable() end
+---@param foodType any
+---@return boolean
+function GMR.IsConjurable(foodType) end
 
-function GMR.IsConjuredItem() end
+---@param itemId number
+---@return boolean
+function GMR.IsConjuredItem(itemId) end
 
-function GMR.IsConnectionPointReachable() end
+---@param destX number
+---@param destY number
+---@param destZ number
+---@return boolean
+function GMR.IsConnectionPointReachable(destX, destY, destZ) end
 
-function GMR.IsCustomObjectId() end
+---@param object any
+---@return boolean
+function GMR.IsCustomObjectId(object) end
 
+---@return boolean
 function GMR.IsCustomPathHandling() end
 
 ---@param unit string|any
 ---@return boolean
 function GMR.IsDead(unit) end
 
+---@return boolean
 function GMR.IsDeathSkipping() end
 
+---@return boolean
 function GMR.IsDejunkActive() end
 
+---@return boolean
 function GMR.IsDestInsideBuilding() end
 
+---@return boolean
 function GMR.IsDisenchantingValid() end
 
 ---@param itemId number
@@ -2165,10 +2214,13 @@ function GMR.IsDrinkable(itemId) end
 ---@return boolean
 function GMR.IsDrinking(unit) end
 
+---@return boolean
 function GMR.IsDrowning() end
 
+---@return boolean
 function GMR.IsDungeonCompleted() end
 
+---@return boolean
 function GMR.IsDungeonProfile() end
 
 ---Wether the item is eatable or not
@@ -2180,175 +2232,311 @@ function GMR.IsEatable(itemId) end
 ---@return boolean
 function GMR.IsEating(unit) end
 
-function GMR.IsEnemyNearPosition() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsEnemyNearPosition(x, y, z) end
 
-function GMR.IsEnemyWithIdAttacking() end
+---@param id any
+---@return boolean
+function GMR.IsEnemyWithIdAttacking(id) end
 
-function GMR.IsEvadingEnemy() end
+---@param object any
+---@return boolean
+function GMR.IsEvadingEnemy(object) end
 
 ---Whether GMR is currently executing or not
 ---@return boolean
 function GMR.IsExecuting() end
 
-function GMR.IsFacingXYZ() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsFacingXYZ(x, y, z) end
 
-function GMR.IsFactionNPC() end
+---@param unit string|any
+---@return boolean
+function GMR.IsFactionNPC(unit) end
 
+---@return boolean
 function GMR.IsFishing() end
 
+---@return boolean
 function GMR.IsFishingLureApplyable() end
 
-function GMR.IsFlaggedObjectId() end
+---@param id any
+---@return boolean
+function GMR.IsFlaggedObjectId(id) end
 
+---@return boolean
 function GMR.IsFlamestrikeUsable() end
 
-function GMR.IsFleeingEnemy() end
+---@param unit string|any
+---@return boolean
+function GMR.IsFleeingEnemy(unit) end
 
+---@return boolean
 function GMR.IsFlightmasterDiscoverable() end
 
+---@return boolean
 function GMR.IsFlyable() end
 
+---@return boolean
 function GMR.IsFlyingDisabled() end
 
 ---@return boolean
 function GMR.IsFullyLoaded() end
 
+---@return boolean
 function GMR.IsGasCloud() end
 
 ---@param unit string|any
 ---@return boolean
 function GMR.IsGhost(unit) end
 
-function GMR.IsGossipButtonVisible() end
+---@param index any
+---@return boolean
+function GMR.IsGossipButtonVisible(index) end
 
-function GMR.IsGroundPosition() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsGroundPosition(x, y, z) end
 
+---@return boolean
 function GMR.IsGryphonMasterDenied() end
 
-function GMR.IsGryphonMasterKnown() end
+---@param nodeX number
+---@param nodeY number
+---@return boolean
+function GMR.IsGryphonMasterKnown(nodeX, nodeY) end
 
-function GMR.IsGryphonMasterRequired() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsGryphonMasterRequired(x, y, z) end
 
-function GMR.IsGryphonMasterStored() end
+---@param nodeX number
+---@param nodeY number
+---@return boolean
+function GMR.IsGryphonMasterStored(nodeX, nodeY) end
 
-function GMR.IsHealthPotion() end
+---@param itemId number
+---@return boolean
+function GMR.IsHealthPotion(itemId) end
 
+---@return boolean
 function GMR.IsHearthstoneSetable() end
 
-function GMR.IsHyperspawnFarming() end
+---@param object any
+---@return boolean
+function GMR.IsHerbId(object) end
 
+---@param spawnType any
+---@return boolean
+function GMR.IsHyperspawnFarming(spawnType) end
+
+---@return boolean
 function GMR.IsHyperspawnProfile() end
 
+---@return boolean
 function GMR.IsIdling() end
 
+---@return boolean
 function GMR.IsIgnoringCombat() end
 
 ---@param unit string|any
 ---@return boolean
 function GMR.IsImmune(unit) end
 
+---@return boolean
 function GMR.IsInAuberdine() end
 
+---@return boolean
 function GMR.IsInBaradinBay() end
 
+---@return boolean
 function GMR.IsInBattleground() end
 
+---@return boolean
 function GMR.IsInBattlegroundQueue() end
 
+---@return boolean
 function GMR.IsInDarkmaulCitadel() end
 
+---@return boolean
 function GMR.IsInDeeprunTramZone() end
 
+---@return boolean
 function GMR.IsInLoadingScreen() end
 
+---@return boolean
 function GMR.IsInNorthrend() end
 
+---@return boolean
 function GMR.IsInPartyMode() end
 
+---@return boolean
+function GMR.IsInPreparationRoom() end
+
+---@return boolean
 function GMR.IsInVehicle() end
 
+---@return boolean
 function GMR.IsInVendorMode() end
 
+---@return boolean
 function GMR.IsInteractingWithTrainer() end
 
 ---@param unit string|any
 ---@return boolean
 function GMR.IsInterruptable(unit) end
 
-function GMR.IsInvalidMesh() end
+---@param object any
+---@param distance number
+---@return boolean
+function GMR.IsInvalidMesh(object, distance) end
 
-function GMR.IsInvalidVendor() end
+---@param id number
+---@return boolean
+function GMR.IsInvalidVendor(id) end
 
-function GMR.IsItemDisenchantable() end
+---@param itemId number
+---@return boolean
+function GMR.IsItemDisenchantable(itemId) end
 
 ---Wether an item with itemId as ID exists in your bags or not
 ---@param itemId number
 ---@return boolean
 function GMR.IsItemInBags(itemId) end
 
+---@return boolean
 function GMR.IsLatinAlphabet() end
 
+---@return boolean
 function GMR.IsLibDrawValid() end
 
+---@return boolean
 function GMR.IsLoSMeshing() end
 
-function GMR.IsLootedObject() end
+---@param corpse any
+---@return boolean
+function GMR.IsLootedObject(corpse) end
 
+---@return boolean
 function GMR.IsLooting() end
 
+---@return boolean
 function GMR.IsMageInParty() end
 
+---@return boolean
 function GMR.IsMailboxSet() end
 
+---@return boolean
 function GMR.IsMailing() end
 
-function GMR.IsMailingItem() end
+---@param itemName string
+---@return boolean
+function GMR.IsMailingItem(itemName) end
 
-function GMR.IsMailingWhitelisted() end
+---@param itemName string
+---@return boolean
+function GMR.IsMailingWhitelisted(itemName) end
 
-function GMR.IsManaPotion() end
+---@param itemId number
+---@return boolean
+function GMR.IsManaPotion(itemId) end
 
+---@return boolean
 function GMR.IsMapLoaded() end
 
-function GMR.IsMassQuestId() end
+---@param id number
+---@return boolean
+function GMR.IsMassQuestId(id) end
 
-function GMR.IsMeshAreaBlacklisted() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsMeshAreaBlacklisted(x, y, z) end
 
+---@return boolean
 function GMR.IsMeshLoaded() end
 
-function GMR.IsMeshPointSkipable() end
+---@param index number
+---@return boolean
+function GMR.IsMeshPointSkipable(index) end
 
+---@return boolean
 function GMR.IsMountDenied() end
 
+---@return boolean
 function GMR.IsMountStuck() end
 
+---@return boolean
 function GMR.IsMountable() end
 
-function GMR.IsMoving() end
+---@param unit string|any
+---@return boolean
+function GMR.IsMoving(unit) end
 
+---@return boolean
 function GMR.IsMovingValid() end
 
+---@return boolean
 function GMR.IsNearDestination() end
 
-function GMR.IsNearVendor() end
+---@param vendor any
+---@return boolean
+function GMR.IsNearVendor(vendor) end
 
+---@return boolean
 function GMR.IsNearVendorPath() end
 
+---@return boolean
 function GMR.IsNearWaterSurface() end
 
+---@param object any
+---@return boolean
+function GMR.IsNodeId(object) end
+
+---@return boolean
 function GMR.IsNodeInteractable() end
 
-function GMR.IsNodeMaxGatheringRangeRequired() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsNodeMaxGatheringRangeRequired(x, y, z) end
 
-function GMR.IsObjectCreatureType() end
+---@param object any
+---@return boolean
+function GMR.IsNodeTrivial(object) end
 
-function GMR.IsObjectFleeing() end
+---@param object any
+---@param type any
+---@return boolean
+function GMR.IsObjectCreatureType(object, type) end
 
-function GMR.IsObjectFound() end
+---@param object any
+---@return boolean
+function GMR.IsObjectFleeing(object) end
 
-function GMR.IsObjectGatherable() end
+---@param object any
+---@return boolean
+function GMR.IsObjectFound(object) end
 
-function GMR.IsObjectIndoors() end
+---@param object any
+---@return boolean
+function GMR.IsObjectGatherable(object) end
+
+---@param object any
+---@return boolean
+function GMR.IsObjectIndoors(object) end
 
 ---@param object userdata
 ---@return boolean
@@ -2358,52 +2546,95 @@ function GMR.IsObjectInteractable(object) end
 ---@return boolean
 function GMR.IsObjectLootable(object) end
 
-function GMR.IsObjectPickPocketable() end
+---@param object string|any
+---@return boolean
+function GMR.IsObjectPickPocketable(object) end
 
-function GMR.IsObjectPosition(object) end
+---@param object any
+---@param x number
+---@param y number
+---@param z number
+---@param r number
+---@return boolean
+function GMR.IsObjectPosition(object, x, y, z, r) end
 
+---@return boolean
 function GMR.IsObjectSet() end
 
 ---@param object string|any
 ---@return boolean
 function GMR.IsObjectSkinnable(object) end
 
-function GMR.IsObjectTapDenied() end
+---@param object any
+---@param force any?
+---@return boolean
+function GMR.IsObjectTapDenied(object, force) end
 
-function GMR.IsObjectZValid() end
+---@param object any
+---@return boolean
+function GMR.IsObjectZValid(object) end
 
+---@return boolean
 function GMR.IsOnExilesReachShip() end
 
-function GMR.IsOnMeshPoint() end
+---@param x number
+---@param y number
+---@param z number
+---@param r number
+---@return boolean
+function GMR.IsOnMeshPoint(x, y, z, r) end
 
+---@param object any
+---@return boolean
+function GMR.IsOreId(object) end
+
+---@return boolean
 function GMR.IsOutdoors() end
 
-function GMR.IsPaidPack() end
+---@param pack any
+---@return boolean
+function GMR.IsPaidPack(pack) end
 
+---@return boolean
 function GMR.IsPartyAssistant() end
 
-function GMR.IsPartyEnemy() end
+---@param enemy any
+---@return boolean
+function GMR.IsPartyEnemy(enemy) end
 
-function GMR.IsPartyGUID() end
+---@param guid any
+---@return boolean
+function GMR.IsPartyGUID(guid) end
 
+---@return boolean
 function GMR.IsPartyLeaderInInstance() end
 
-function GMR.IsPartyMember() end
+---@param name any
+---@return boolean
+function GMR.IsPartyMember(name) end
 
+---@return boolean
 function GMR.IsPartyMemberResurrectable() end
 
+---@return boolean
 function GMR.IsPartyMissingGoods() end
 
+---@return boolean
 function GMR.IsPartyPreparing() end
 
+---@return boolean
 function GMR.IsPartyRecovering() end
 
+---@return boolean
 function GMR.IsPartyTogether() end
 
+---@return boolean
 function GMR.IsPathable() end
 
+---@return boolean
 function GMR.IsPetDenied() end
 
+---@return boolean
 function GMR.IsPetStarving() end
 
 ---Whether you are at x, y, z or not
@@ -2414,9 +2645,14 @@ function GMR.IsPetStarving() end
 ---@return boolean
 function GMR.IsPlayerPosition(x, y, z, radius) end
 
+---@return boolean
 function GMR.IsPlayerStealthed() end
 
-function GMR.IsPlayerXY() end
+---@param x number
+---@param y number
+---@param r number
+---@return boolean
+function GMR.IsPlayerXY(x, y, r) end
 
 ---@param x number
 ---@param y number
@@ -2430,35 +2666,86 @@ function GMR.IsPointInTheAir(x, y, z) end
 ---@return boolean
 function GMR.IsPointUnderwater(x, y, z) end
 
-function GMR.IsPoisonItem() end
+---@param item any
+---@return boolean
+function GMR.IsPoisonItem(item) end
 
-function GMR.IsPositionBelowTerrain() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionBelowTerrain(x, y, z) end
 
-function GMR.IsPositionInArea() end
+---@param area any
+---@param x number
+---@param y number
+---@return boolean
+function GMR.IsPositionInArea(area, x, y) end
 
-function GMR.IsPositionInAuberdine() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionInAuberdine(x, y, z) end
 
-function GMR.IsPositionInDunMorogh() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionInDunMorogh(x, y, z) end
 
-function GMR.IsPositionInLoS() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionInLoS(x, y, z) end
 
-function GMR.IsPositionInPolygon() end
+---@param polygon any
+---@param point any
+---@return boolean
+function GMR.IsPositionInPolygon(polygon, point) end
 
-function GMR.IsPositionInTeldrassil() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionInTeldrassil(x, y, z) end
 
-function GMR.IsPositionInThunderBluff() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionInThunderBluff(x, y, z) end
 
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionInsideCave(x, y, z) end
+
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsPositionUnderwater(x, y, z) end
+
+---@return boolean
 function GMR.IsPositionOnMesh() end
 
+---@return boolean
 function GMR.IsPreparing() end
 
-function GMR.IsProwlCondition() end
+---@param condition any
+---@return boolean
+function GMR.IsProwlCondition(condition) end
 
 ---@param id number quest id
 ---@return boolean
 function GMR.IsQuestActive(id) end
 
-function GMR.IsQuestButtonVisible() end
+---@param index number
+---@return boolean
+function GMR.IsQuestButtonVisible(index) end
 
 ---@param id number quest id
 ---@return boolean
@@ -2468,32 +2755,49 @@ function GMR.IsQuestCompletable(id) end
 ---@return boolean
 function GMR.IsQuestCompleted(id) end
 
-function GMR.IsQuestEnemyId() end
+---@param id any
+---@return boolean
+function GMR.IsQuestEnemyId(id) end
 
+---@return boolean
 function GMR.IsQuestEnemySet() end
 
+---@return boolean
 function GMR.IsQuestTraveling() end
 
+---@return boolean
 function GMR.IsQuesting() end
 
+---@return boolean
 function GMR.IsRangedEquipped() end
 
+---@return boolean
 function GMR.IsReadyToFly() end
 
-function GMR.IsRecovering() end
+---@param update any?
+---@return boolean
+function GMR.IsRecovering(update) end
 
+---@return boolean
 function GMR.IsRefillDenied() end
 
+---@return boolean
 function GMR.IsRepairing() end
 
-function GMR.IsRepeatableQuestComplete() end
+---@param questID number
+---@return boolean
+function GMR.IsRepeatableQuestComplete(questID) end
 
+---@return boolean
 function GMR.IsRepopAllowed() end
 
+---@return boolean
 function GMR.IsSelling() end
 
+---@return boolean
 function GMR.IsShapeshiftable() end
 
+---@return boolean
 function GMR.IsShapeshifted() end
 
 ---@param spell string
@@ -2501,15 +2805,24 @@ function GMR.IsShapeshifted() end
 ---@return boolean
 function GMR.IsShapeshiftedCastable(spell, unit) end
 
+---@return boolean
 function GMR.IsShooting() end
 
-function GMR.IsSkinnable() end
+---@param object any
+---@return boolean
+function GMR.IsSkinnable(object) end
 
-function GMR.IsSkinnedObject() end
+---@param corpse any
+---@return boolean
+function GMR.IsSkinnedObject(corpse) end
 
+---@return boolean
 function GMR.IsSpeedUpDenied() end
 
-function GMR.IsSpellImmune() end
+---@param spellName string
+---@param unit string|any
+---@return boolean
+function GMR.IsSpellImmune(spellName, unit) end
 
 ---@param spell string
 ---@param unit string|any
@@ -2519,80 +2832,153 @@ function GMR.IsSpellInRange(spell, unit) end
 ---@return boolean
 function GMR.IsSpellKnown(spell) end
 
-function GMR.IsSpellTrainable() end
+---@param id any
+---@return boolean
+function GMR.IsSpellTrainable(id) end
 
+---@return boolean
 function GMR.IsSpellTraining() end
 
 ---@param spell string
+---@param unit string|any?
 ---@return boolean
-function GMR.IsSpellUsable(spell) end
+function GMR.IsSpellUsable(spell, unit) end
 
+---@return boolean
 function GMR.IsStandingCentral() end
 
+---@return boolean
 function GMR.IsStandingDistanced() end
 
-function GMR.IsStealthCondition() end
+---@param condition any
+---@return boolean
+function GMR.IsStealthCondition(condition) end
 
-function GMR.IsSummonedByPlayer() end
+---@param object any
+---@return boolean
+function GMR.IsSummonedByPlayer(object) end
 
-function GMR.IsTableEntry() end
+---@param t any
+---@param entry any
+---@return boolean
+function GMR.IsTableEntry(t, entry) end
 
-function GMR.IsTableSortable() end
+---@param t any
+---@return boolean
+function GMR.IsTableSortable(t) end
 
-function GMR.IsTamingUnit() end
+---@param object any
+---@return boolean
+function GMR.IsTamingUnit(object) end
 
-function GMR.IsTargetPosition() end
+---@param x number
+---@param y number
+---@param z number
+---@param r number
+---@return boolean
+function GMR.IsTargetPosition(x, y, z, r) end
 
-function GMR.IsTargetable() end
+---@param object any
+---@param bool boolean?
+---@return boolean
+function GMR.IsTargetable(object, bool) end
 
-function GMR.IsTargetless() end
+---@param object any
+---@return boolean
+function GMR.IsTargetless(object) end
 
-function GMR.IsTempBlacklistedArea() end
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function GMR.IsTempBlacklistedArea(x, y, z) end
 
-function GMR.IsTotem() end
+---@param object any
+---@return boolean
+function GMR.IsTotem(object) end
 
-function GMR.IsTraceValid() end
+---@param fromX number
+---@param fromY number
+---@param fromZ number
+---@param toX number
+---@param toY number
+---@param toZ number
+---@return boolean
+function GMR.IsTraceValid(fromX, fromY, fromZ, toX, toY, toZ) end
 
+---@return boolean
 function GMR.IsTrainerDisplayingUnavailableSpells() end
 
+---@return boolean
 function GMR.IsTrainerFrameShown() end
 
-function GMR.IsTrainerTarget() end
+---@param id any
+---@return boolean
+function GMR.IsTrainerTarget(id) end
 
-function GMR.IsTrainingDummy() end
+---@param object any
+---@return boolean
+function GMR.IsTrainingDummy(object) end
 
+---@return boolean
 function GMR.IsTrainingSpellAvailable() end
 
-function GMR.IsTrinketUsable() end
+---@param trinket any
+---@return boolean
+function GMR.IsTrinketUsable(trinket) end
 
+---@return boolean
 function GMR.IsTurnInSkipped() end
 
-function GMR.IsUnitFlying() end
+---@param unit string|any
+---@return boolean
+function GMR.IsUnitFlying(unit) end
 
 ---Wether unit was killed by player or not
 ---@param unit string|any
 ---@return boolean
 function GMR.IsUnitKilledByPlayer(unit) end
 
-function GMR.IsUnitWalking() end
+---@param unit string|any
+---@return boolean
+function GMR.IsUnitWalking(unit) end
 
+---@return boolean
 function GMR.IsUnstuckEnabled() end
 
+---@return boolean
+function GMR.IsUnstuckPathing() end
+
+---@return boolean
 function GMR.IsUsingCTM() end
 
+---@return boolean
 function GMR.IsUsingPointSystem() end
 
-function GMR.IsValidDrink() end
+---@param itemID number
+---@return boolean
+function GMR.IsValidDrink(itemID) end
 
-function GMR.IsValidFood() end
+---@param itemID number
+---@return boolean
+function GMR.IsValidFood(itemID) end
 
-function GMR.IsValidStringIndex() end
+---@param string any
+---@param stringToFind any
+---@return boolean
+function GMR.IsValidStringIndex(string, stringToFind) end
 
-function GMR.IsVendorId() end
+---@param id any
+---@return boolean
+function GMR.IsVendorId(id) end
 
-function GMR.IsVendorPosition() end
+---@param range any
+---@return boolean
+function GMR.IsVendorPosition(range) end
 
-function GMR.IsVendorSet() end
+---@param vendor any
+---@return boolean
+function GMR.IsVendorSet(vendor) end
 
 function GMR.IsVendoring() end
 
