@@ -948,7 +948,7 @@ function GMR.GetFlyingMountingRange() end
 ---@return table Contains all profiles of a given profile folder
 function GMR.GetFolderProfiles(folder) end
 
----@return string, boolean, number, number, number itemName, isEating, itemCount, containerSlot, bagSlot
+---@return string itemName, boolean isEating, number itemCount, number containerSlot, number bagSlot 
 function GMR.GetFood() end
 
 ---@return any
@@ -2743,7 +2743,7 @@ function GMR.ObjectIsFacing(object1, object2) end
 function GMR.ObjectName() end
 function GMR.ObjectPointer() end
 ---@param object userdata
----@return number,number,number x,y,z
+---@return number x, number y, number z
 function GMR.ObjectPosition(object) end
 function GMR.ObjectRawFacing() end
 ---@param object string|any
@@ -2843,13 +2843,13 @@ function GMR.SendPartyModeMessage() end
 ---@param isHttps boolean
 ---@param body string
 ---@param headers string
----@param onSuccess fun(respContent:string) @???
+---@param onSuccess fun(respContent:string)
 function GMR.SendPostRequest(url, path, isHttps, body, headers, onSuccess) end
 function GMR.SendRemoteData() end
 function GMR.SendRequest() end
 function GMR.SendRequest2() end
 ---@param url string
----@param callback fun(content:string):void
+---@param callback fun(content:string)
 function GMR.SendRequestAndThen(url, callback) end
 function GMR.SendRocketChatMessage() end
 function GMR.SetAssistUnit() end
@@ -2926,7 +2926,7 @@ function GMR.UnitAffectingCombat(unit) end
 ---@param index number
 ---@param unknownArg any Maybe someone can tell about that arg
 ---@param buffOwnerUnit string|any owner of the buff
----@return string, number, number, string, number, number, string, boolean, boolean, number  name, icon, count, debuffType, duration, expirationTime, unitCaster, isStealable, shouldConsolidate, spellId
+---@return string name, number icon, number count, string debuffType, number duration, number expirationTime, string unitCaster, boolean isStealable, boolean shouldConsolidate, number spellId
 function GMR.UnitBuff(unit, index, unknownArg, buffOwnerUnit) end
 ---@param unit string|any
 ---@param anotherUnit string|any
@@ -2934,7 +2934,7 @@ function GMR.UnitBuff(unit, index, unknownArg, buffOwnerUnit) end
 function GMR.UnitCanAttack(unit, anotherUnit) end
 function GMR.UnitCanHeal() end
 ---@param unit string|any
----@return string, string, number, number, number, boolean, string, boolean, number name, text, texture, startTimeMS, endTimeMS, isTradeSkill, castID, notInterruptible, spellId
+---@return string name, string text, number texture, number startTimeMS, number endTimeMS, boolean isTradeSkill, string castID, boolean notInterruptible, number spellId 
 function GMR.UnitCastingInfo(unit) end
 ---Wether units cast is < than timeInSec
 ---@param unit string|any
