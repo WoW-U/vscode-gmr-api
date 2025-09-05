@@ -3286,6 +3286,8 @@ function GMR.QuestSettingsHandler(questType) end
 
 function GMR.QueueBattleground() end
 
+function GMR.QueueForBattleground() end
+
 ---@param path string Absolute path to file
 ---@return string File's content
 function GMR.ReadFile(path) end
@@ -3296,27 +3298,39 @@ function GMR.RecoverStealthed() end
 
 function GMR.Reload() end
 
-function GMR.RemoveBlacklistItem() end
+---@param itemID number
+function GMR.RemoveBlacklistItem(itemID) end
 
-function GMR.RemoveCentralPoint() end
+---@param index number
+function GMR.RemoveCentralPoint(index) end
 
-function GMR.RemoveMailingItem() end
+---@param itemID number
+function GMR.RemoveMailingItem(itemID) end
 
-function GMR.RemoveTableEntries() end
+---@param t any
+---@param num number
+function GMR.RemoveTableEntries(t, num) end
 
 function GMR.RepairEquipment() end
 
-function GMR.ReplaceSpecialChars() end
+---@param str string
+function GMR.ReplaceSpecialChars(str) end
 
 function GMR.Repop() end
 
-function GMR.RequestFile() end
+---@param owner any
+---@param file any
+function GMR.RequestFile(owner, file) end
 
-function GMR.RequestPaidProfile() end
+---@param packName any
+---@param profileName any
+function GMR.RequestPaidProfile(packName, profileName) end
 
 function GMR.RequestPartyLead() end
 
-function GMR.RequestQuester() end
+---@param owner any
+---@param file any
+function GMR.RequestQuester(owner, file) end
 
 function GMR.ResetClass() end
 
@@ -3324,7 +3338,8 @@ function GMR.ResetClickedDungeonObjects() end
 
 function GMR.ResetDistanceMovement() end
 
-function GMR.ResetDungeon() end
+---@param delay number?
+function GMR.ResetDungeon(delay) end
 
 function GMR.ResetObjectIteration() end
 
@@ -3352,6 +3367,8 @@ function GMR.ResetVendorMode() end
 
 function GMR.ResetVendorMount() end
 
+function GMR.RestoreUI() end
+
 function GMR.ResurrectPartyMember() end
 
 function GMR.Revive() end
@@ -3366,18 +3383,23 @@ function GMR.RunEncryptedScript(str) end
 function GMR.RunMacroText(text) end
 
 ---@param input string
----@param dest any @???
+---@param dest any
 function GMR.RunString(input, dest) end
 
 function GMR.SaveDungeonTimer() end
 
 function GMR.SaveFlightpoint() end
 
-function GMR.SaveObject() end
+---@param name string
+function GMR.SaveObject(name) end
 
 function GMR.SavePosition() end
 
-function GMR.SaveVariable() end
+---@param name string
+---@param folder string
+---@param str string
+---@param append boolean?
+function GMR.SaveVariable(name, folder, str, append) end
 
 function GMR.ScanObjects() end
 
@@ -3385,19 +3407,30 @@ function GMR.ScreenToWorld() end
 
 function GMR.SecurityHandler() end
 
-function GMR.SelectGossipOption() end
+function GMR.SelectBattlegroundRole() end
 
-function GMR.SelectOption() end
+---@param index number
+function GMR.SelectGossipOption(index) end
 
-function GMR.SendBlizzardMessage() end
+---@param questType any
+---@param i number
+function GMR.SelectOption(questType, i) end
 
-function GMR.SendDiscordMessage() end
+---@param gm any
+---@param msg string
+function GMR.SendBlizzardMessage(gm, msg) end
+
+---@param msg string
+---@param webhook any
+function GMR.SendDiscordMessage(msg, webhook) end
 
 ---Send HTTP request
 ---@param object GMR_Helper.SendHttpRequestObject request params and options
 function GMR.SendHttpRequest(object) end
 
-function GMR.SendNotification() end
+---@param msg string
+---@param key any
+function GMR.SendNotification(msg, key) end
 
 function GMR.SendPartyModeMessage() end
 
@@ -3411,7 +3444,12 @@ function GMR.SendPostRequest(url, path, isHttps, body, headers, onSuccess) end
 
 function GMR.SendRemoteData() end
 
-function GMR.SendRequest() end
+---@param url string
+---@param path string
+---@param isHttps boolean
+---@param error function
+---@param success function
+function GMR.SendRequest(url, path, isHttps, error, success) end
 
 function GMR.SendRequest2() end
 
@@ -3419,11 +3457,15 @@ function GMR.SendRequest2() end
 ---@param callback fun(content:string)
 function GMR.SendRequestAndThen(url, callback) end
 
-function GMR.SendRocketChatMessage() end
+---@param msg any
+---@param url any
+function GMR.SendRocketChatMessage(msg, url) end
 
-function GMR.SetAssistUnit() end
+---@param name string
+function GMR.SetAssistUnit(name) end
 
-function GMR.SetAutoBlacklist() end
+---@param t any
+function GMR.SetAutoBlacklist(t) end
 
 function GMR.SetCastingDelay() end
 
@@ -3431,38 +3473,88 @@ function GMR.SetCastingDelay() end
 ---@param index number
 function GMR.SetCentralIndex(index) end
 
-function GMR.SetChecked() end
+---@param var any
+---@param boolean boolean?
+function GMR.SetChecked(var, boolean) end
 
-function GMR.SetCombatRange() end
+---@param value number
+function GMR.SetCombatRange(value) end
 
-function GMR.SetDelay() end
+---@param dropdown any
+---@param value any
+function GMR.SetCombopointDropdownValue(dropdown, value) end
 
-function GMR.SetDiscoverFlightmasters() end
+---@param dropdown any
+---@param value any
+function GMR.SetConditionDropdownValue(dropdown, value) end
 
-function GMR.SetItemMaxCount() end
+---@param var any
+---@param delay number
+function GMR.SetDelay(var, delay) end
 
-function GMR.SetKeepRunning() end
+---@param bool boolean
+function GMR.SetDiscoverFlightmasters(bool) end
 
-function GMR.SetMaximumLevel() end
+---@param id number
+---@param count number
+function GMR.SetItemMaxCount(id, count) end
 
-function GMR.SetMinimumLevel() end
+---@param bool boolean
+function GMR.SetKeepRunning(bool) end
 
-function GMR.SetMode() end
+---@param value number
+function GMR.SetMaximumLevel(value) end
+
+---@param value number
+function GMR.SetMinimumLevel(value) end
+
+---@param mode any
+function GMR.SetMode(mode) end
+
+---@param dropdown any
+---@param value any
+function GMR.SetNumericDropdownValue(dropdown, value) end
+
+---@param dropdown any
+---@param value any
+function GMR.SetPercentDropdownValue(dropdown, value) end
+
+---@param id any
+---@param range any
+function GMR.SetQuestNpcInteractRange(id, range) end
 
 function GMR.SetPitch() end
 
 function GMR.SetQuestNpcInteractRange() end
 
----@param x any @???
+---@param x any
 function GMR.SetQuestingState(x) end
 
-function GMR.SetScanRadius() end
+---@param value number
+function GMR.SetScanRadius(value) end
 
-function GMR.SetVendorMode() end
+---@param value any
+function GMR.SetSelectedSpecializationValue(value) end
+
+---@param dropdown any
+---@param value any
+function GMR.SetShardDropdownValue(dropdown, value) end
+
+---@param dropdown any
+---@param value any
+function GMR.SetUnitDropdownValue(dropdown, value) end
+
+---@param mode any
+function GMR.SetVendorMode(mode) end
+
+---@param dropdown any
+---@param value any
+function GMR.SetWeaponDropdownValue(dropdown, value) end
 
 function GMR.SetYaw() end
 
-function GMR.Shapeshift() end
+---@param type any
+function GMR.Shapeshift(type) end
 
 function GMR.Shutdown() end
 
@@ -3472,12 +3564,15 @@ function GMR.SitStandOrDescendStart() end
 
 function GMR.SkipFlightMeshPoints() end
 
-function GMR.SkipTurnIn() end
+---@param bool boolean
+function GMR.SkipTurnIn(bool) end
 
 function GMR.SmartBlacklist() end
 
+---@return boolean
 function GMR.SoulshardExists() end
 
+---@return boolean
 function GMR.SoulstoneExists() end
 
 ---Stops casting
@@ -3491,7 +3586,9 @@ function GMR.StandUp() end
 
 function GMR.StartAttack() end
 
-function GMR.StartQuest() end
+---@param objectName any
+---@param newFormat any
+function GMR.StartQuest(objectName, newFormat) end
 
 ---GMR stops executing
 function GMR.Stop() end
@@ -3499,9 +3596,12 @@ function GMR.Stop() end
 function GMR.StopAttack() end
 
 ---Stops GMR's navigation
-function GMR.StopMoving() end
+---@param unrgency any?
+function GMR.StopMoving(unrgency) end
 
-function GMR.StopWandCast() end
+---@param spell any
+---@param unit any
+function GMR.StopWandCast(spell, unit) end
 
 function GMR.StoreTalent() end
 
@@ -3515,18 +3615,23 @@ function GMR.StrafeRightStop() end
 
 function GMR.SwitchFishingWeapons() end
 
-function GMR.TargetObject() end
+---@param object any
+function GMR.TargetObject(object) end
 
-function GMR.TargetTrainer() end
+---@param id any
+function GMR.TargetTrainer(id) end
 
 ---@param unit string|any
 function GMR.TargetUnit(unit) end
 
-function GMR.TempBlacklistSetNode() end
+---@param radius number
+function GMR.TempBlacklistSetNode(radius) end
 
-function GMR.TimerExecution() end
+---@param x any
+function GMR.TimerExecution(x) end
 
-function GMR.ToggleMovement() end
+---@param movementType any
+function GMR.ToggleMovement(movementType) end
 
 function GMR.ToggleRun() end
 
@@ -3534,11 +3639,13 @@ function GMR.TraceLine() end
 
 function GMR.TrackPlayerPosition() end
 
-function GMR.Trade() end
+---@param unit any
+function GMR.Trade(unit) end
 
 function GMR.TradeGoods() end
 
-function GMR.Translate() end
+---@param word any
+function GMR.Translate(word) end
 
 function GMR.TurnLeftStart() end
 
@@ -3564,7 +3671,9 @@ function GMR.UnitBuff(unit, index, unknownArg, buffOwnerUnit) end
 ---@return boolean
 function GMR.UnitCanAttack(unit, anotherUnit) end
 
-function GMR.UnitCanHeal() end
+---@param unit any
+---@return boolean
+function GMR.UnitCanHeal(unit) end
 
 ---@param unit string|any
 ---@return string name, string text, number texture, number startTimeMS, number endTimeMS, boolean isTradeSkill, string castID, boolean notInterruptible, number spellId 
@@ -3628,7 +3737,8 @@ function GMR.UnitInteract() end
 
 function GMR.UnitIsAFK() end
 
-function GMR.UnitIsAttackable() end
+---@param unit any
+function GMR.UnitIsAttackable(unit) end
 
 function GMR.UnitIsCorpse() end
 
@@ -3722,7 +3832,9 @@ function GMR.UpdateFishingItems() end
 
 function GMR.UpdateFlightmasterTable() end
 
-function GMR.UpdateGryphonMaster() end
+---@param nodeX number
+---@param nodeY number
+function GMR.UpdateGryphonMaster(nodeX, nodeY) end
 
 function GMR.UpdateGryphonMasters() end
 
@@ -3752,19 +3864,26 @@ function GMR.UpdateQuestButtonIndex() end
 
 function GMR.UpdateQuestingFile() end
 
-function GMR.UpdateQuestingIndex() end
+---@param a any
+function GMR.UpdateQuestingIndex(a) end
 
 function GMR.UpdateSavedEnemy() end
 
-function GMR.UpdateSavedProfile() end
+---@param profileName string
+function GMR.UpdateSavedProfile(profileName) end
 
-function GMR.UpdateSavedProfileFolder() end
+---@param creator any
+function GMR.UpdateSavedProfileCreator(creator) end
 
-function GMR.UpdateSavedProfileIndex() end
+---@param folder string
+function GMR.UpdateSavedProfileFolder(folder) end
+
+function GMR.UpdateSavedProfileIndex(index) end
 
 function GMR.UpdateSavedProfileType() end
 
-function GMR.UpdateSavedQuester() end
+---@param quester any
+function GMR.UpdateSavedQuester(quester) end
 
 function GMR.UpdateTalents() end
 
@@ -3775,19 +3894,27 @@ function GMR.UpdateVendorMounts() end
 function GMR.UpdateWoWVisionToken() end
 
 ---@param itemId number|string
-function GMR.Use(itemId) end
+---@param unit any
+function GMR.Use(itemId, unit) end
 
 function GMR.UseContainerItem() end
 
 function GMR.UseItemByName() end
 
-function GMR.UseWand() end
+---@param unit any
+function GMR.UseWand(unit) end
 
 function GMR.ValidateProfiles() end
 
-function GMR.VendorPathHandler() end
+---@param vendorType any
+---@param direction any
+function GMR.VendorPathHandler(vendorType, direction) end
 
-function GMR.WeaponMissingEnchant() end
+---@param state any
+function GMR.Visibility(state) end
+
+---@param weapon any
+function GMR.WeaponMissingEnchant(weapon) end
 
 function GMR.WorldToScreen() end
 
@@ -3807,24 +3934,21 @@ GMR.Questing = {}
 
 ---@param id number
 ---@param distance number
----@return any @???
 function GMR.Questing.FollowNpc(id, distance) end
 
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param id number
----@param dynamicFlag number @???
+---@param dynamicFlag number
 ---@param distance number
 ---@param delay number
----@return any @???
 function GMR.Questing.InteractWith(x, y, z, id, dynamicFlag, distance, delay) end
 
 ---@param x number
 ---@param y number
 ---@param z number
----@param id number @???
----@return any @???
+---@param id number
 function GMR.Questing.KillEnemy(x, y, z, id) end
 
 ---@param x number
@@ -3833,7 +3957,6 @@ function GMR.Questing.KillEnemy(x, y, z, id) end
 ---@param npcId number
 ---@param itemId number
 ---@param distance number
----@return any @???
 function GMR.Questing.UseItemOnNpc(x, y, z, npcId, itemId, distance) end
 
 ---@param x number
@@ -3844,36 +3967,82 @@ function GMR.Questing.UseItemOnNpc(x, y, z, npcId, itemId, distance) end
 ---@param distance number
 function GMR.Questing.CastSpellOnNpc(x, y, z, npcId, spellId, distance) end
 
+---@param x number
+---@param y number
+---@param z number
+---@param npcId number
+---@param emote any
+---@param distance number
 function GMR.Questing.EmoteAtNpc(x, y, z, npcId, emote, distance) end
 
+---@param x number
+---@param y number
+---@param z number
+---@param itemId number
+---@param distance number
 function GMR.Questing.UseItemOnPosition(x, y, z, itemId, distance) end
 
+---@param x number
+---@param y number
+---@param z number
+---@param itemId number
+---@param distance number
 function GMR.Questing.UseItemOnGround(x, y, z, itemId, distance) end
 
+---@param x number
+---@param y number
+---@param z number
 function GMR.Questing.ExtraActionButton1(x, y, z) end
 
+---@param x number
+---@param y number
+---@param z number
+---@param id number
+---@param delay number
+---@param distance number
+---@param buttonIndex number
 function GMR.Questing.GossipWith(x, y, z, id, delay, distance, buttonIndex) end
+
+---@param questId number
+---@return any
 function GMR.Questing.GetQuestInfo(questId) end
 
+---@param questId number
+---@param index number
+---@return boolean
 function GMR.Questing.IsObjectiveCompleted(questId, index) end
 
+---@param questId number
+---@param index number
+---@return any
 function GMR.Questing.GetObjectiveFulfilled(questId, index) end
 
 function GMR.Questing.BlacklistGUID() end
 
+---@return any
 function GMR.Questing.GetGossipOption() end
 
-function GMR.Questing.IsBlacklistedObject() end
+---@param object any
+---@return boolean
+function GMR.Questing.IsBlacklistedObject(object) end
 
-function GMR.Questing.FleeTo() end
+---@param x number
+---@param y number
+---@param z number
+function GMR.Questing.FleeTo(x, y, z) end
 
+---@return boolean
 function GMR.Questing.IsAutoBlacklisting() end
 
-function GMR.Questing.MoveTo() end
+---@param x number
+---@param y number
+---@param z number
+function GMR.Questing.MoveTo(x, y, z) end
 
 function GMR.Questing.AvoidAoE() end
 
-function GMR.Questing.UseExtraActionButton1() end
+---@param id number
+function GMR.Questing.UseExtraActionButton1(id) end
 
 GMR.Tables = {}
 GMR.Timer = {}
@@ -3888,6 +4057,9 @@ GMR.Variables = {
 	Customer = "",
 }
 GMR.json = {}
+
+---@param self any
+function GMR.Tables.PickPocket.Handler.ManaTombs(self) end
 
 GMR_Helper = {}
 
