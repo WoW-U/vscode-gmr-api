@@ -631,7 +631,9 @@ function GMR.CancelPendingSpell() end
 
 function GMR.CancelUnitBuff() end
 
-function GMR.CastSpellByName() end
+---Cast spell by name
+---@param spellName string
+function GMR.CastSpellByName(spellName) end
 
 function GMR.ChineseToByte() end
 
@@ -3779,7 +3781,9 @@ function GMR.Use(itemId) end
 
 function GMR.UseContainerItem() end
 
-function GMR.UseItemByName() end
+---Use item by name
+---@param itemName string
+function GMR.UseItemByName(itemName) end
 
 function GMR.UseWand() end
 
