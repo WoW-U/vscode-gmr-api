@@ -5,6 +5,8 @@ A Visual Studio Code extension that provides Lua library definitions for **GMR**
 
 This plugin is community driven, so it would not automatically get updates when GMR add new function, please add them by yourself or [create an issue](https://github.com/WoW-U/vscode-gmr-api/issues/new) and describe what should be added
 
+[Join Discord](https://discord.gg/72TFvXMVT6) to discuss and participate.
+
 ## Features
 
 - added all methods from [official API doc](https://gmrwow.com/docs/#/api)
