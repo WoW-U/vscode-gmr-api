@@ -3,7 +3,7 @@
 
 A Visual Studio Code extension that provides Lua library definitions for **GMR**, enabling IntelliSense, autocompletion, and type checking for GMR-specific APIs.
 
-This plugin is community driven, so it would not automatically get updates when GMR add new function, please add them by yourself or [create an issue](https://github.com/WoW-U/vscode-gmr-api/issues/new) and describe what should be added
+This plugin is community driven, so it would not automatically get updates when GMR add new function, please add them by yourself, [create an issue](https://github.com/WoW-U/vscode-gmr-api/issues/new) send a message to [discord channel](https://discord.gg/72TFvXMVT6) and describe what should be added
 
 [Join Discord](https://discord.gg/72TFvXMVT6) to discuss and participate.
 
@@ -14,9 +14,10 @@ This plugin is community driven, so it would not automatically get updates when 
 - added methods from [my old lua definitions file](https://gitlab.com/gmr-wow/gmr-community-scripts/-/blob/6c02a9282ea6f3570c0f55953da96ab15bd48a13/api/_gmr_definitions.lua)
 - added methods from [free form file](https://gitlab.com/gmr-wow/gmr-community-scripts/-/blob/6c02a9282ea6f3570c0f55953da96ab15bd48a13/api/gmr_api_incomplete.lua) from discord 
 
-## Usage
+## Instructions
 
-Once installed, the extension will automatically add the GMR Lua definitions to your workspace. You can start using GMR APIs with full IntelliSense support.
+- Press `CTRL + SHIFT + P` to open the command palette
+- type `Activate GMR API extension` and press enter
 
 ### Example
 Here’s an example of how to use GMR APIs with autocompletion and type checking:
@@ -36,6 +37,7 @@ gmr.AmmoExists() -- Autocompletion and type checking will work here
 ## Requirements
 
 - [Lua VSCode extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)  must be installed for this extension to work.
+- [WoW Lua API](https://marketplace.visualstudio.com/items?itemName=ketho.wow-api) LUA definitions for WoW API.
 
 ## Contributing
 
