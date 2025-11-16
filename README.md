@@ -19,6 +19,8 @@ This plugin is community driven, so it would not automatically get updates when 
 - Press `CTRL + SHIFT + P` to open the command palette
 - type `Activate GMR API extension` and press enter
 
+![command-palete-example](img/command-palete-example.png)
+
 ### Example
 Here’s an example of how to use GMR APIs with autocompletion and type checking:
 
